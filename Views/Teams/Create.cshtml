@@ -1,0 +1,149 @@
+﻿@model Beer_Olympics.Team
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+
+<div class="form-horizontal">
+    <h4>Team</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="col">
+
+        <input type="text" id="count" name="count" />
+        <button type="button" id="teamscreate">create teams</button>
+
+
+
+    </div>
+
+
+    <br />
+
+    <div id="teams">
+        <table>
+            <tr>
+                <td id="head1"></td>
+                <td id="head2"></td>
+                <td id="head3"></td>
+                <td id="head4"></td>
+                <td id="head5"></td>
+                <td id="head6"></td>
+            </tr>
+
+        </table>
+        <table id="playertable" style="width:100%">
+            <tr>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <button type="button" id="random">random</button>
+
+
+    <button type="submit" id="test">save</button>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script>
+    var playerlist = {
+        date: "2022"
+    };
+    $.ajax({
+        type: "Post",
+
+        url: "/Teams/PlayersList",
+        data: JSON.stringify(playerlist),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        success: function (data) {
+
+            arr = [];
+
+            $.each(data.players, function (key, value) {
+
+                if (value != null && value != "") {
+                    arr.push(value)
+
+                }
+
+
+            });
+
+
+
+        },
+
+        error: function () {
+
+
+
+        }
+
+
+
+    });
+
+    $('#count').val(1)
+    $('#teamscreate').on('click', function () {
+        var randomItem = arr[Math.floor(Math.random() * arr.length)];
+
+        console.log(randomItem)
+
+
+   
+
+        counter = $('#count').val();
+   
+
+        $('<tr id="tablerow' + counter + '">' +
+                '<td style = width:15%;">' +
+                  '<input type="text" class=form-control maxwidth id="playerTeam_' + counter + '" />' +
+                    '</td>' +
+                    '<td style = width:15%;">' +
+                    '<input type="text" class=form-control maxwidth id="playername' + counter + '" />' +
+                    '</td>' +
+                    '<td style = width:15%;">' +
+                    '<input type="text" class=form-control maxwidth id="playername__' + counter + '" />' +
+                    '</td>' +
+                    '<td style = width:15%;">' +
+                    '<input type="text" class=form-control maxwidth id="playername___' + counter + '" />' +
+                    '</td>' +
+                    '<td style = width:15%;">' +
+                    '<input type="text" class=form-control maxwidth id="playername____' + counter + '" />' +
+                    '</td>' +
+                    '<td style = width:15%;">' +
+                    '<input type="text" class=form-control maxwidth id="playername_____' + counter + '" />' +
+                    '</td>' +
+                    '</tr>').appendTo('#playertable');
+
+                counter++
+
+        $('#count').val(counter)
+         
+
+
+
+    
+    });
+</script>
