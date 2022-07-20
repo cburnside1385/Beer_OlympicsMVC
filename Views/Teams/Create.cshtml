@@ -4,8 +4,6 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Creat the Teams</h2>
-
 
 @using (Html.BeginForm())
 {
@@ -14,8 +12,7 @@
 
 
 <div class="form-horizontal">
-    <h4>Team</h4>
-    <hr />
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="col">
 
@@ -91,16 +88,8 @@
 
     </div>
 
-  
-
-
-    <button type="submit" id="test">save</button>
 </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

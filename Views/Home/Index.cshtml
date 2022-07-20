@@ -1,12 +1,16 @@
 ﻿
 
 
-<div style="background-color:#dee2e6" id="tabs-Home" class="tabsHome">
+<div style="background-color:#dee2e6;padding-top:10px" id="tabs-Home" class="tabsHome">
     <div>
         <ul>
             <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#tabsHomeScoreboard">Scoreboard</a></li>
-            <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeBrackets">Brackets</a></li>
 
+            <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeBrackets">Brackets</a></li>
+            <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeTimes">Timed Events</a></li>
+            <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeSchedule">Schedule</a></li>
+            <li class="tab tabsHome tabsHome-Brackets"><a href="#Teams">Teams</a></li>
+            <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeRules">Rules</a></li>
 
 
 
@@ -19,32 +23,84 @@
         <div class="tabsbracket">
             <ul>
                 <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#tabsbeerpong">Beer Pong</a></li>
-                <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeBrackets">Brackets</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#Baseball">Baseball</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#Civil">Civil War</a></li>
+                <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#Cornhole">Cornhole</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#Flip">Flip-Cup</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#High">High-Noon</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#SpeedBall">SpeedBall</a></li>
+
+
+            </ul>
+            <div id="tabsbeerpong">
+                @Html.Action("BeerpongBracket", "Games")
+
+            </div>
+            <div id="Baseball">
+                @Html.Action("BaseballBracket", "Games")
+
+            </div>
+            <div id="Civil">
+                @Html.Action("CivilWarBracket", "Games")
+
+            </div>
+            <div id="Cornhole">
+                @Html.Action("CornholeBracket", "Games")
+
+            </div>
+            <div id="Flip">
+                @Html.Action("FlipcupBracket", "Games")
+
+            </div>
+            <div id="High">
+                @Html.Action("HighnoonBracket", "Games")
+
+            </div>
+            <div id="SpeedBall">
+                @Html.Action("SpeedballBracket", "Games")
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="tabsHomeTimes">
+        <div class="tabstimes">
+            <ul>
+                <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#tabsbeerpong">Boat Race</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeBrackets">Chugalug</a></li>
 
 
 
 
             </ul>
-            <div id="tabsbeerpong">
-                @Html.Action("Beerpongbracket", "Games")
+            @*<div id="tabsbeerpong">
+                    @Html.Action("Beerpongbracket", "Games")
 
-            </div>
+                </div>
+                <div id="tabsbeerpong">
+                    @Html.Action("Baseball", "Games")
+
+                </div>*@
         </div>
     </div>
     <div id="tabsHomeScoreboard">
         @Html.Action("Index", "Teams")
 
     </div>
-  
+    <div id="Teams">
+        @Html.Action("Create", "Teams")
+
+    </div>
 </div>
 
 <script>
     $(function () {
 
-        $('.tabsHome, .tabsbracket').tabs();
+        $('.tabsHome, .tabsbracket,.tabstimes').tabs();
 
     })
-
+    window.onbeforeunload = function () { return false; }
 
 
 </script>

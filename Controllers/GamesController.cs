@@ -36,12 +36,13 @@ namespace Beer_Olympics.Controllers
 
             return View(db.Games.ToList());
         }
-        public ActionResult Baseball()
+        
+        public ActionResult CivilWarBracket()
         {
 
-            IEnumerable<SelectListItem> players = db.Teams
+            IEnumerable<SelectListItem> playersbaseball = db.Teams
            .Where(c => c.Team_Country != null)
-           .OrderBy(c => c.Team_Country)
+         
            .Select(c => new SelectListItem
            {
 
@@ -50,13 +51,123 @@ namespace Beer_Olympics.Controllers
 
 
            }).Distinct();
-            var playas = players.OrderBy(a => Guid.NewGuid()).ToList();
+            var playas = playersbaseball.OrderBy(a => Guid.NewGuid()).ToList();
             ViewBag.PlayerList = playas;
 
 
             return View(db.Games.ToList());
         }
 
+        public ActionResult CornHoleBracket()
+        {
+
+            IEnumerable<SelectListItem> playersbaseball = db.Teams
+           .Where(c => c.Team_Country != null)
+
+           .Select(c => new SelectListItem
+           {
+
+               Value = c.Team_Country,
+               Text = c.Team_Country
+
+
+           }).Distinct();
+            var playas = playersbaseball.OrderBy(a => Guid.NewGuid()).ToList();
+            ViewBag.PlayerList = playas;
+
+
+            return View(db.Games.ToList());
+        }
+
+        public ActionResult FlipcupBracket()
+        {
+
+            IEnumerable<SelectListItem> playersbaseball = db.Teams
+           .Where(c => c.Team_Country != null)
+
+           .Select(c => new SelectListItem
+           {
+
+               Value = c.Team_Country,
+               Text = c.Team_Country
+
+
+           }).Distinct();
+            var playas = playersbaseball.OrderBy(a => Guid.NewGuid()).ToList();
+            ViewBag.PlayerList = playas;
+
+
+            return View(db.Games.ToList());
+        }
+
+
+        public ActionResult HighnoonBracket()
+        {
+
+            IEnumerable<SelectListItem> playersbaseball = db.Teams
+           .Where(c => c.Team_Country != null)
+
+           .Select(c => new SelectListItem
+           {
+
+               Value = c.Team_Country,
+               Text = c.Team_Country
+
+
+           }).Distinct();
+            var playas = playersbaseball.OrderBy(a => Guid.NewGuid()).ToList();
+            ViewBag.PlayerList = playas;
+
+
+            return View(db.Games.ToList());
+        }
+
+
+        public ActionResult SpeedballBracket()
+        {
+
+            IEnumerable<SelectListItem> playersbaseball = db.Teams
+           .Where(c => c.Team_Country != null)
+
+           .Select(c => new SelectListItem
+           {
+
+               Value = c.Team_Country,
+               Text = c.Team_Country
+
+
+           }).Distinct();
+            var playas = playersbaseball.OrderBy(a => Guid.NewGuid()).ToList();
+            ViewBag.PlayerList = playas;
+
+
+            return View(db.Games.ToList());
+        }
+
+
+        public ActionResult BaseballBracket()
+        {
+
+            IEnumerable<SelectListItem> playersbaseball = db.Teams
+           .Where(c => c.Team_Country != null)
+
+           .Select(c => new SelectListItem
+           {
+
+               Value = c.Team_Country,
+               Text = c.Team_Country
+
+
+           }).Distinct();
+            var playas = playersbaseball.OrderBy(a => Guid.NewGuid()).ToList();
+            ViewBag.PlayerList = playas;
+
+
+            return View(db.Games.ToList());
+
+
+        
+        }
         // GET: Games/Details/5
         public ActionResult Details(Guid? id)
         {

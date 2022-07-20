@@ -19,14 +19,14 @@
     @*<script src="~/Scripts/Drawing-Tournament-Brackets-with-jQuery-Brackets-js/js/brackets.min.js"></script>*@
 </head>
 <body style="background-color:black">
-    <button class="save" type="button">save</button>
+    
     <div hidden>
 
         @Html.DropDownList("PlayerList", (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername" })
 
     </div>
     <center>
-        <div style="height:600px;background-color:black" class="container demo">
+        <div style="height:600px;background-color:black" class="container Pong">
         </div>
     </center>
 </body>
@@ -814,11 +814,11 @@
         //}fdrit
 
 
-        $('.demo').bracket({
+        $('.Pong').bracket({
             init: customData
         });
 
-        $(' .demo').bracket({
+        $(' .Pong').bracket({
             init: customData, // data to initialize
             save: function () { }, // called whenever bracket is modified
             userData: null, // custom user data
@@ -839,11 +839,5 @@
         });
     }
   
-    $('.save').click(function () {
-        if ($('data-teamid').hasClass('highlightWinner'))
-        {
-            alert('s')
-        }
-
-    })
+ 
 </script>

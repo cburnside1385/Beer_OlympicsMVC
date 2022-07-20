@@ -1,65 +1,34 @@
 ﻿@model IEnumerable<Beer_Olympics.Team>
+<head>
+    <script src="~/Scripts/SscoreBoard.js"></script>
 
-@{
-    Layout = null;
-}
+</head>
 
-<h2>Index</h2>
+<table class="table" id="ScoreBoard">
+    <thead>
+        <tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        
-        <th>
-          Country
-        </th>
-        <th>
-            Beer Pong
-        </th>
-        <th>
-            Baseball
-        </th>
-        <th>
-            Chugalug
-        </th>
-        <th>
-            Corn Hole
-        </th>
-        <th>
-            Speed Ball
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.Team_Country)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Beer_Pong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Baseball)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Chugalug)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Corn_Hole)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Speed_Ball)
-        </td>
-        <td>
-            @*@Html.ActionLink("", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
-        </td>
-    </tr>
-}
+            <th>
+                Country
+            </th>
+            <th>
+                Beer Pong
+            </th>
+            <th>
+                Baseball
+            </th>
+            <th>
+                Chugalug
+            </th>
+            <th>
+                Corn Hole
+            </th>
+            <th>
+                Speed Ball
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+<tbody></tbody>
 
 </table>
