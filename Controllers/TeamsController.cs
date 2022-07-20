@@ -38,7 +38,18 @@ namespace Beer_Olympics.Controllers
         // GET: Teams/Create
         public ActionResult Create()
         {
+            IEnumerable<SelectListItem> players = db.Players
+                .Where(c => c.Team_Country_ID == null)
+                .OrderBy(c => c.Player_Name)
+                .Select(c => new SelectListItem
+                {
 
+                    Value = c.ID.ToString(),
+                    Text = c.Player_Name
+
+
+                }).Distinct();
+            ViewBag.PlayerList = players;
 
             return View();
         }
@@ -48,39 +59,23 @@ namespace Beer_Olympics.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Team_Country_ID,Team_Country,Team_Member_01,Team_Member_02,Team_Member_03,Team_Member_04,Team_Member_05,Olympic_Date")] Team teams, int? count)
+        public ActionResult Create([Bind(Include = "ID,team_Country,Team_Member_01,Team_Member_02,Team_Member_03,Team_Member_04,Team_Member_05,Olympic_Date")] Team teams, int? count)
         {
-            for (int i = 1; i <= count; i++)
-            {
 
 
-                var player1 = Request.Form["playername" + i];
-                var player2 = Request.Form["playername__" + i];
-                var player3 = Request.Form["playername___" + i];
-                var player4 = Request.Form["playername____" + i];
-                var player5 = Request.Form["playername____" + i];
-                var Team = Request.Form["playerTeam_" + i];
-            
-                if (teams != null)
-                {
-                    var place = teams.Team_Country_ID.ToString();
-                    teams.Team_Member_01 = player1;
-                    teams.Team_Member_02 = player2;
-                    teams.Team_Member_03 = player3;
-                    teams.Team_Member_04 = player4;
-                    teams.Team_Member_05 = player5;
-                    place = Team;
+            IEnumerable<SelectListItem> players = db.Players
+              .Where(c => c.Team_Country_ID == null)
+              .OrderBy(c => c.Player_Name)
+              .Select(c => new SelectListItem
+              {
 
-                    teams.Olympics_Date = DateTime.Today;
-                    teams.ID = Guid.NewGuid();
-
-                    db.Teams.Add(teams);
-                    db.SaveChanges();
-
-                }
+                  Value = c.ID.ToString(),
+                  Text = c.Player_Name
 
 
-            }
+              }).Distinct();
+            ViewBag.PlayerList = players;
+          
           
 
             return View();
@@ -152,7 +147,8 @@ namespace Beer_Olympics.Controllers
                            {
                                c.Player_Name,
                                c.Player_ID,
-                     
+                               c.ID,
+
 
                            });
 
@@ -168,6 +164,41 @@ namespace Beer_Olympics.Controllers
 
 
 
+        public ActionResult PlayersListTourneys(string date)
+
+        {
+            var teams = (from c in db.Players
+                           where (c.Olympics_Date.ToString().Substring(0, 4) == date)
+                           orderby c.Player_Name
+                           select new
+                           {
+                               name = c.Player_Name,
+                             
+
+
+                           });
+
+            var results = (from c in db.Players
+                         where (c.Olympics_Date.ToString().Substring(0, 4) == "Nothing")
+                         orderby c.Player_Name
+                         select new
+                         {
+                            
+
+
+
+                         });
+
+
+            return base.Json(new
+            {
+                teams,
+                results
+            }, JsonRequestBehavior.AllowGet);
+
+
+        }
+
         //public ActionResult Create(Team teams, int? count)
 
         //{
@@ -181,7 +212,7 @@ namespace Beer_Olympics.Controllers
         //        var player4 = Request.Form["playername____" + i];
         //        var player5 = Request.Form["playername____" + i];
         //        var Team = Request.Form["playerTeam_" + i];
-               
+
         //        if (teams != null)
         //        {
         //            var place =teams.Team_Country_ID.ToString();
@@ -191,7 +222,7 @@ namespace Beer_Olympics.Controllers
         //            teams.Team_Member_04 = player4;
         //            teams.Team_Member_05 = player5;
         //            place = Team;
-                    
+
         //            teams.Olympics_Date = DateTime.Today;
 
         //            db.Teams.Add(teams);
@@ -202,13 +233,64 @@ namespace Beer_Olympics.Controllers
 
         //    }
         //    return View();
-        
+
         //}
 
 
+        [HttpPost]
+        public JsonResult SaveTeam(List<Team>team)
+
+        {
+          using (DrinkingEntities entities = new DrinkingEntities())
+            {
 
 
 
+                if(team == null)
+                {
+
+                    team = new List<Team>();
+
+                }
+
+
+                foreach(Team teams in team)
+                {
+
+
+
+                    entities.Teams.Add(teams);
+
+                }
+                int insertedRecords = entities.SaveChanges();
+                return Json(insertedRecords);
+            }
+                    
+                    
+                    
+                    }
+
+
+        [HttpPost]
+        public JsonResult UpdatePlayer(Player model)
+
+        {
+
+            
+            if (ModelState.IsValid)
+            {
+                bool result = true;
+                db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Player_ID).IsModified = false;
+                db.Entry(model).Property(x => x.Player_Name).IsModified = false;
+                db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
+                db.SaveChanges();
+                return Json(new { returnvalue = result }, JsonRequestBehavior.AllowGet);
+
+
+            }
+            return Json("Failed", JsonRequestBehavior.AllowGet);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

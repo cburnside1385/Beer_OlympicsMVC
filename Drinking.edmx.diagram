@@ -7,8 +7,8 @@
       <Diagram DiagramId="671a31b3ea264a819251a673bb6f08f7" Name="Diagram1">
         <EntityTypeShape EntityType="DrinkingModel.Country" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DrinkingModel.Game" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrinkingModel.Team" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DrinkingModel.Player" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="DrinkingModel.Team" Width="1.5" PointX="7.875" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

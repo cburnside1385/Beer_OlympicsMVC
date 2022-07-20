@@ -119,6 +119,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
@@ -212,6 +213,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\tourney.css" />
     <Content Include="Drinking.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Drinking.Context.cs</LastGenOutput>
@@ -232,20 +234,78 @@
     <Content Include="Drinking.edmx.diagram">
       <DependentUpon>Drinking.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery-bracket-master\.gitignore" />
+    <Content Include="Scripts\jquery-bracket-master\dist\jquery.bracket.min.css" />
+    <Content Include="Scripts\jquery-bracket-master\dist\jquery.bracket.min.js" />
+    <Content Include="Scripts\jquery-bracket-master\Gruntfile.js" />
+    <Content Include="Scripts\jquery-bracket\dist\jquery.bracket.min.css" />
+    <Content Include="Scripts\jquery-bracket\dist\jquery.bracket.min.js" />
+    <Content Include="Scripts\jquery-bracket\Gruntfile.js" />
+    <Content Include="Scripts\jquery-bracket\src\jquery.bracket.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Drawing-Tournament-Brackets-with-jQuery-Brackets-js\LICENSE" />
+    <Content Include="Scripts\Drawing-Tournament-Brackets-with-jQuery-Brackets-js\README.md" />
+    <Content Include="node_modules\.package-lock.json" />
+    <Content Include="Scripts\jquery-bracket\.git" />
+    <Content Include="Scripts\jquery-bracket\bower.json" />
+    <Content Include="Scripts\jquery-bracket\LICENSE" />
+    <Content Include="Scripts\jquery-bracket\package.json" />
+    <Content Include="Scripts\jquery-bracket\README.md" />
+    <Content Include="Scripts\jquery-bracket\src\jquery.bracket.scss" />
+    <Content Include="Scripts\jquery-bracket\tslint.json" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\Drawing-Tournament-Brackets-with-jQuery-Brackets-js\index.html" />
+    <Content Include="Scripts\Drawing-Tournament-Brackets-with-jQuery-Brackets-js\js\brackets.js" />
+    <Content Include="Scripts\Drawing-Tournament-Brackets-with-jQuery-Brackets-js\js\brackets.min.js" />
+    <Content Include="Scripts\Drawing-Tournament-Brackets-with-jQuery-Brackets-js\js\jquery-1.11.3.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\AUTHORS.txt" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\external\jquery\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\index.html" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\jquery-ui.min.css" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\jquery-ui.structure.css" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\jquery-ui.theme.css" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\LICENSE.txt" />
+    <Content Include="Scripts\jquery.gracket.js-master\README.md" />
+    <Content Include="Scripts\jquery-bracket-master\bower.json" />
+    <Content Include="Scripts\jquery-bracket-master\LICENSE" />
+    <Content Include="Scripts\jquery-bracket-master\package-lock.json" />
+    <Content Include="Scripts\jquery-bracket-master\package.json" />
+    <Content Include="Scripts\jquery-bracket-master\README.md" />
+    <Content Include="Scripts\jquery-bracket-master\src\jquery.bracket.scss" />
+    <Content Include="Scripts\jquery-bracket-master\tslint.json" />
+    <Content Include="Scripts\jquery-ui-1.13.2.custom\package.json" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.13.1.js" />
     <Content Include="Scripts\jquery-ui-1.13.1.min.js" />
+    <Content Include="Scripts\jquery.gracket.js-master\jquery.gracket.js" />
+    <Content Include="Scripts\jquery.gracket.js-master\jquery.gracket.min.js" />
+    <Content Include="Scripts\jquery.gracket.js-master\tests\index.html" />
+    <Content Include="Scripts\jquery.gracket.js-master\tests\test.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -275,6 +335,12 @@
     <Content Include="Views\Teams\Details.cshtml" />
     <Content Include="Views\Teams\Edit.cshtml" />
     <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\Games\Create.cshtml" />
+    <Content Include="Views\Games\Delete.cshtml" />
+    <Content Include="Views\Games\Details.cshtml" />
+    <Content Include="Views\Games\Edit.cshtml" />
+    <Content Include="Views\Games\BeerPongBracket.cshtml" />
+    <Content Include="Views\Games\BaseBall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,7 +374,14 @@
     <Content Include="Scripts\jquery-3.6.0.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\jquery-bracket-master\lib\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\jquery-bracket-master\src\jquery.bracket.ts" />
+    <TypeScriptCompile Include="Scripts\jquery-bracket\lib\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\jquery-bracket\src\jquery.bracket.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

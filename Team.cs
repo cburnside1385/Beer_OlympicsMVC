@@ -14,8 +14,7 @@ namespace Beer_Olympics
     
     public partial class Team
     {
-        public System.Guid ID { get; set; }
-        public Nullable<int> Team_Country_ID { get; set; }
+        public int ID { get; set; }
         public string Team_Country { get; set; }
         public string Team_Member_01 { get; set; }
         public string Team_Member_02 { get; set; }
@@ -23,5 +22,33 @@ namespace Beer_Olympics
         public string Team_Member_04 { get; set; }
         public string Team_Member_05 { get; set; }
         public Nullable<System.DateTime> Olympics_Date { get; set; }
+        public Nullable<int> Beer_Pong { get; set; }
+        public Nullable<int> Beer_Pong_Place { get; set; }
+        public Nullable<int> Chugalug { get; set; }
+        public Nullable<System.TimeSpan> Chugalug_Time { get; set; }
+        public Nullable<int> Boat_Race { get; set; }
+        public Nullable<System.TimeSpan> Boat_Race_Time { get; set; }
+        public Nullable<int> Civil_War { get; set; }
+        public Nullable<int> Civil_War_Place { get; set; }
+        public Nullable<int> Corn_Hole { get; set; }
+        public Nullable<int> Corn_Hole_Place { get; set; }
+        public Nullable<int> Dizzy_Bat { get; set; }
+        public Nullable<int> Dizzy_Bat_Time { get; set; }
+        public Nullable<int> Survivor_Flip_Cup { get; set; }
+        public Nullable<int> Survivor_Flip_CupPlace { get; set; }
+        public Nullable<int> High_Noon { get; set; }
+        public Nullable<int> High_Noon_Place { get; set; }
+        public Nullable<int> Slip_Flip { get; set; }
+        public Nullable<System.TimeSpan> Slip_Flip_Time { get; set; }
+        public Nullable<int> Baseball { get; set; }
+        public string Baseball_Place { get; set; }
+        public Nullable<int> Swim_n_Shoot { get; set; }
+        public Nullable<System.TimeSpan> Swim_n_Shoot_Time { get; set; }
+        public Nullable<int> Quarters { get; set; }
+        public Nullable<int> Quarters_Place { get; set; }
+        public Nullable<int> Pool_Pig { get; set; }
+        public Nullable<int> Pool_Pig_place { get; set; }
+        public Nullable<int> Speed_Ball { get; set; }
+        public Nullable<int> Speed_Ball_Place { get; set; }
     }
 }

@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Creat the Teams</h2>
 
 
 @using (Html.BeginForm())
@@ -17,39 +17,81 @@
     <h4>Team</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="col">
+<div class="col">
 
-        <input type="text" id="count" name="count" />
-        <button type="button" id="teamscreate">create teams</button>
+    <input type="text" id="count" name="count" hidden/>
+
+    <select id="playerNumber"><option value="0">Select Number of Players</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+    
 
 
 
-    </div>
+</div>
 
 
     <br />
 
     <div id="teams">
         <table>
-            <tr>
-                <td id="head1"></td>
-                <td id="head2"></td>
-                <td id="head3"></td>
-                <td id="head4"></td>
-                <td id="head5"></td>
-                <td id="head6"></td>
-            </tr>
+          
 
         </table>
         <table id="playertable" style="width:100%">
             <tr>
+                <td id="head"></td>
+                <td id="head0"></td>
+                <td id="head1">Country</td>
+                <td id="head2">Captain</td>
+                <td id="head3">Player 2</td>
+                <td id="head4">Player 3</td>
+                <td id="head5">Player 4</td>
+                <td id="head6">Player 5</td>
             </tr>
+            <tr>
+
+            <tr id="tablerow' + counter + '">
+
+                <td style="width:5%;">
+                    <button type="button" class="form-control save  maxwidth" id="' + counter + '" name="' + counter + '">Save</button>
+                </td>
+
+                <td style="width:5%;">
+                    <button type="button" class="form-control Random  maxwidth" id="' + counter + '" name="' + counter + '">Random</button>
+                </td>
+
+                <td style="width:15%;">
+                    <input type="text" class="form-control playerTeam maxwidth" id="playerTeam" name="playername" />
+                </td>
+
+                <td style="width:15%;">
+                    @Html.DropDownListFor(model => model.Team_Member_01, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername" })
+                </td>
+             
+                <td style="width:15%;">
+                    @Html.DropDownListFor(model => model.Team_Member_02, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class= "form-control players selectpicker maxwidth dropdown-menu.inner", id ="playername__"})
+                </td>
+               
+                <td style="width:15%;">
+                    @Html.DropDownListFor(model => model.Team_Member_03, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername___" })
+                </td>
+            
+                <td style="width:15%;">
+                    @Html.DropDownListFor(model => model.Team_Member_04, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control  players selectpicker maxwidth dropdown-menu.inner", id = "playername____" })
+                </td>
+             
+                <td style="width:15%;">
+                    @Html.DropDownListFor(model => model.Team_Member_05, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername_____" })
+                </td>
+              
+            </tr>
+
+            
         </table>
 
 
     </div>
 
-    <button type="button" id="random">random</button>
+  
 
 
     <button type="submit" id="test">save</button>
@@ -66,84 +108,217 @@
 
 
 <script>
-    var playerlist = {
-        date: "2022"
+  
+
+
+
+    $('#count').val(0)
+    $('.Random').on('click', function () {
+       
+ 
+
+        Countries();
+        Players();
+       
+       
+    });
+
+    function Countries() {
+
+        $.ajax({
+            url: "https://restcountries.com/v3.1/all",
+            jsonpCallback: "callback",
+            dataType: "json",
+            success: function (data) {
+                arr2 = [];
+                
+                data.forEach(country => {
+                    arr2.push(country.name.common)
+                   
+                    //$('#playerTeam' + (counter - 1)).append("<option value=" + country.name.common + ">" + country.name.common + "</option>")
+                 
+           
+                });
+                var randomCountry = arr2[Math.floor(Math.random() * arr2.length)];
+             
+
+           
+                $('#playerTeam').val(randomCountry)
+      
+                
+             
+            }
+        });
     };
-    $.ajax({
-        type: "Post",
 
-        url: "/Teams/PlayersList",
-        data: JSON.stringify(playerlist),
-        dataType: "json",
-        contentType: 'application/json; charset=utf-8',
-        success: function (data) {
+    function Players() {
+        var playerlist = {
+            date: "2022"
+        };
+        $.ajax({
+            type: "Post",
 
-            arr = [];
+            url: "/Teams/PlayersList",
+            data: JSON.stringify(playerlist),
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
 
-            $.each(data.players, function (key, value) {
+                arr = [];
+                arr2 = [];
+                $.each(data.players, function (key, value) {
+                  
+                    if (value != null && value != "") {
+                        arr.push(value.ID)
+                     
 
-                if (value != null && value != "") {
-                    arr.push(value)
-
-                }
+                    }
 
 
-            });
+                });
+      
+              
+                var randomPlayer = arr[Math.floor(Math.random() * arr.length)];
+                var randomPlayer2 = arr[Math.floor(Math.random() * arr.length)];
+                var randomPlayer3 = arr[Math.floor(Math.random() * arr.length)];
+                var randomPlayer4 = arr[Math.floor(Math.random() * arr.length)];
+                var randomPlayer5 = arr[Math.floor(Math.random() * arr.length)];
+               
+                $('#playername:visible').val(randomPlayer)
+                $('#playername__:visible').val(randomPlayer2)
+                $('#playername___:visible').val(randomPlayer3)
+                $('#playername____:visible').val(randomPlayer4)
+                $('#playername_____:visible').val(randomPlayer5)
+     
+            },
+
+            error: function () {
 
 
 
-        },
+            }
 
-        error: function () {
 
+
+        });
+     
+        
+
+
+    };
+
+    $('#playerNumber').on('change', function () {
+            var playerCount = $('#playerNumber').val();
+      
+        if (playerCount == 1) {
+          
+         
+            
+            $('td:nth-child(5),th:nth-child(5)').hide();
+            $('td:nth-child(6),th:nth-child(6)').hide();
+            $('td:nth-child(7),th:nth-child(7)').hide();
+            $('td:nth-child(8),th:nth-child(8)').hide();
+        }
+       else  if (playerCount == 2) {
+            $('td:nth-child(2),th:nth-child(2)').show();
+            $('td:nth-child(3),th:nth-child(3)').show();
+            $('td:nth-child(4),th:nth-child(4)').show();
+            $('td:nth-child(5),th:nth-child(5)').show();
+            $('td:nth-child(6),th:nth-child(6)').hide();
+            $('td:nth-child(7),th:nth-child(7)').hide();
+            $('td:nth-child(8),th:nth-child(8)').hide();
 
 
         }
+        else if (playerCount == 3) {
+            $('td:nth-child(2),th:nth-child(2)').show();
+            $('td:nth-child(3),th:nth-child(3)').show();
+            $('td:nth-child(4),th:nth-child(4)').show();
+            $('td:nth-child(5),th:nth-child(5)').show();
+            $('td:nth-child(6),th:nth-child(6)').show();
+            $('td:nth-child(7),th:nth-child(7)').hide();
+            $('td:nth-child(8),th:nth-child(8)').hide();
+
+
+        }
+        else if (playerCount == 4) {
+
+            $('td:nth-child(2),th:nth-child(2)').show();
+            $('td:nth-child(3),th:nth-child(3)').show();
+            $('td:nth-child(4),th:nth-child(4)').show();
+            $('td:nth-child(5),th:nth-child(5)').show();
+            $('td:nth-child(6),th:nth-child(6)').show();
+            $('td:nth-child(7),th:nth-child(7)').show();
+            $('td:nth-child(8),th:nth-child(8)').hide();
+
+        }
+        else {
+            $('td:nth-child(2),th:nth-child(2)').show();
+            $('td:nth-child(3),th:nth-child(3)').show();
+            $('td:nth-child(4),th:nth-child(4)').show();
+            $('td:nth-child(5),th:nth-child(5)').show();
+            $('td:nth-child(6),th:nth-child(6)').show();
+            $('td:nth-child(7),th:nth-child(7)').show();
+            $('td:nth-child(8),th:nth-child(8)').show();
+
+        }
+     
+
+
+    })
 
 
 
-    });
-
-    $('#count').val(1)
-    $('#teamscreate').on('click', function () {
-        var randomItem = arr[Math.floor(Math.random() * arr.length)];
-
-        console.log(randomItem)
+    $('#playertable').on('click', '.save', function () {
+        var teams = new Array();
+        var team = {};
 
 
-   
+       
+            team.Team_Country = $('#playerTeam').val(),
+            team.Team_Member_01 = $('#playername option:selected').text(),
+            team.Team_Member_02 = $('#playername__ option:selected').text(),
+            team.Team_Member_03 = $('#playername___ option:selected').text(),
+            team.Team_Member_04 = $('#playername____ option:selected').text(),
+            team.Team_Member_05 = $('#playername_____ option:selected').text(),
+            team.Olympics_Date = "07/23/2022"
+            teams.push(team);
 
-        counter = $('#count').val();
-   
+        $.ajax({
+            type: "Post",
 
-        $('<tr id="tablerow' + counter + '">' +
-                '<td style = width:15%;">' +
-                  '<input type="text" class=form-control maxwidth id="playerTeam_' + counter + '" />' +
-                    '</td>' +
-                    '<td style = width:15%;">' +
-                    '<input type="text" class=form-control maxwidth id="playername' + counter + '" />' +
-                    '</td>' +
-                    '<td style = width:15%;">' +
-                    '<input type="text" class=form-control maxwidth id="playername__' + counter + '" />' +
-                    '</td>' +
-                    '<td style = width:15%;">' +
-                    '<input type="text" class=form-control maxwidth id="playername___' + counter + '" />' +
-                    '</td>' +
-                    '<td style = width:15%;">' +
-                    '<input type="text" class=form-control maxwidth id="playername____' + counter + '" />' +
-                    '</td>' +
-                    '<td style = width:15%;">' +
-                    '<input type="text" class=form-control maxwidth id="playername_____' + counter + '" />' +
-                    '</td>' +
-                    '</tr>').appendTo('#playertable');
+            url: "/Teams/SaveTeam",
+            data: JSON.stringify(teams),
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function (r) {
+                    $(".players").each(function (i, obj) {
+                    var players = {
+                        Team_Country_ID: $('#playerTeam').val(),
+                        ID: $(this).val(),
 
-                counter++
-
-        $('#count').val(counter)
-         
+                    }
 
 
 
-    
-    });
+                $.ajax({
+                    type: "Post",
+
+                    url: "/Teams/UpdatePlayer",
+                    data: JSON.stringify(players),
+                    dataType: "json",
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        $('.players').val('')
+                        $('#playerTeam').val('')
+
+                    }
+
+                });
+
+                    })
+            }
+
+        });
+    })
 </script>

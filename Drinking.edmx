@@ -45,14 +45,13 @@
           <Property Name="Player_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Player_Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Olympics_Date" Type="date" />
-          <Property Name="Team_Country_ID" Type="int" />
+          <Property Name="Team_Country_ID" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Teams">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Team_Country_ID" Type="int" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Team_Country" Type="nvarchar" MaxLength="50" />
           <Property Name="Team_Member_01" Type="nvarchar" MaxLength="50" />
           <Property Name="Team_Member_02" Type="nvarchar" MaxLength="50" />
@@ -60,6 +59,34 @@
           <Property Name="Team_Member_04" Type="nvarchar" MaxLength="50" />
           <Property Name="Team_Member_05" Type="nvarchar" MaxLength="50" />
           <Property Name="Olympics_Date" Type="date" />
+          <Property Name="Beer_Pong" Type="int" />
+          <Property Name="Beer_Pong_Place" Type="int" />
+          <Property Name="Chugalug" Type="int" />
+          <Property Name="Chugalug_Time" Type="time" Precision="7" />
+          <Property Name="Boat_Race" Type="int" />
+          <Property Name="Boat_Race_Time" Type="time" Precision="7" />
+          <Property Name="Civil_War" Type="int" />
+          <Property Name="Civil_War_Place" Type="int" />
+          <Property Name="Corn_Hole" Type="int" />
+          <Property Name="Corn_Hole_Place" Type="int" />
+          <Property Name="Dizzy_Bat" Type="int" />
+          <Property Name="Dizzy_Bat_Time" Type="int" />
+          <Property Name="Survivor_Flip_Cup" Type="int" />
+          <Property Name="Survivor_Flip_CupPlace" Type="int" />
+          <Property Name="High_Noon" Type="int" />
+          <Property Name="High_Noon_Place" Type="int" />
+          <Property Name="Slip_Flip" Type="int" />
+          <Property Name="Slip_Flip_Time" Type="time" Precision="7" />
+          <Property Name="Baseball" Type="int" />
+          <Property Name="Baseball_Place" Type="nchar" MaxLength="10" />
+          <Property Name="Swim_n_Shoot" Type="int" />
+          <Property Name="Swim_n_Shoot_Time" Type="time" Precision="7" />
+          <Property Name="Quarters" Type="int" />
+          <Property Name="Quarters_Place" Type="int" />
+          <Property Name="Pool_Pig" Type="int" />
+          <Property Name="Pool_Pig_place" Type="int" />
+          <Property Name="Speed_Ball" Type="int" />
+          <Property Name="Speed_Ball_Place" Type="int" />
         </EntityType>
         <EntityContainer Name="DrinkingModelStoreContainer">
           <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
@@ -103,25 +130,11 @@
           <Property Name="Game_Rule_14" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Game_Rule_15" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Team">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Team_Country_ID" Type="Int32" />
-          <Property Name="Team_Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Team_Member_01" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Team_Member_02" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Team_Member_03" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Team_Member_04" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Team_Member_05" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Olympics_Date" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityContainer Name="DrinkingEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Countries" EntityType="Self.Country" />
           <EntitySet Name="Games" EntityType="Self.Game" />
-          <EntitySet Name="Teams" EntityType="Self.Team" />
           <EntitySet Name="Players" EntityType="DrinkingModel.Player" />
+          <EntitySet Name="Teams" EntityType="DrinkingModel.Team" />
         </EntityContainer>
         <EntityType Name="Player">
           <Key>
@@ -131,7 +144,48 @@
           <Property Name="Player_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Player_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Olympics_Date" Type="DateTime" Precision="0" />
-          <Property Name="Team_Country_ID" Type="Int32" />
+          <Property Name="Team_Country_ID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Team_Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Team_Member_01" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Team_Member_02" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Team_Member_03" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Team_Member_04" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Team_Member_05" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Olympics_Date" Type="DateTime" Precision="0" />
+          <Property Name="Beer_Pong" Type="Int32" />
+          <Property Name="Beer_Pong_Place" Type="Int32" />
+          <Property Name="Chugalug" Type="Int32" />
+          <Property Name="Chugalug_Time" Type="Time" Precision="7" />
+          <Property Name="Boat_Race" Type="Int32" />
+          <Property Name="Boat_Race_Time" Type="Time" Precision="7" />
+          <Property Name="Civil_War" Type="Int32" />
+          <Property Name="Civil_War_Place" Type="Int32" />
+          <Property Name="Corn_Hole" Type="Int32" />
+          <Property Name="Corn_Hole_Place" Type="Int32" />
+          <Property Name="Dizzy_Bat" Type="Int32" />
+          <Property Name="Dizzy_Bat_Time" Type="Int32" />
+          <Property Name="Survivor_Flip_Cup" Type="Int32" />
+          <Property Name="Survivor_Flip_CupPlace" Type="Int32" />
+          <Property Name="High_Noon" Type="Int32" />
+          <Property Name="High_Noon_Place" Type="Int32" />
+          <Property Name="Slip_Flip" Type="Int32" />
+          <Property Name="Slip_Flip_Time" Type="Time" Precision="7" />
+          <Property Name="Baseball" Type="Int32" />
+          <Property Name="Baseball_Place" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Swim_n_Shoot" Type="Int32" />
+          <Property Name="Swim_n_Shoot_Time" Type="Time" Precision="7" />
+          <Property Name="Quarters" Type="Int32" />
+          <Property Name="Quarters_Place" Type="Int32" />
+          <Property Name="Pool_Pig" Type="Int32" />
+          <Property Name="Pool_Pig_place" Type="Int32" />
+          <Property Name="Speed_Ball" Type="Int32" />
+          <Property Name="Speed_Ball_Place" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -173,21 +227,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Teams">
-            <EntityTypeMapping TypeName="DrinkingModel.Team">
-              <MappingFragment StoreEntitySet="Teams">
-                <ScalarProperty Name="Olympics_Date" ColumnName="Olympics_Date" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Team_Country_ID" ColumnName="Team_Country_ID" />
-                <ScalarProperty Name="Team_Country" ColumnName="Team_Country" />
-                <ScalarProperty Name="Team_Member_01" ColumnName="Team_Member_01" />
-                <ScalarProperty Name="Team_Member_02" ColumnName="Team_Member_02" />
-                <ScalarProperty Name="Team_Member_03" ColumnName="Team_Member_03" />
-                <ScalarProperty Name="Team_Member_04" ColumnName="Team_Member_04" />
-                <ScalarProperty Name="Team_Member_05" ColumnName="Team_Member_05" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Players">
             <EntityTypeMapping TypeName="DrinkingModel.Player">
               <MappingFragment StoreEntitySet="Players">
@@ -195,6 +234,48 @@
                 <ScalarProperty Name="Olympics_Date" ColumnName="Olympics_Date" />
                 <ScalarProperty Name="Player_Name" ColumnName="Player_Name" />
                 <ScalarProperty Name="Player_ID" ColumnName="Player_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="DrinkingModel.Team">
+              <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="Speed_Ball_Place" ColumnName="Speed_Ball_Place" />
+                <ScalarProperty Name="Speed_Ball" ColumnName="Speed_Ball" />
+                <ScalarProperty Name="Pool_Pig_place" ColumnName="Pool_Pig_place" />
+                <ScalarProperty Name="Pool_Pig" ColumnName="Pool_Pig" />
+                <ScalarProperty Name="Quarters_Place" ColumnName="Quarters_Place" />
+                <ScalarProperty Name="Quarters" ColumnName="Quarters" />
+                <ScalarProperty Name="Swim_n_Shoot_Time" ColumnName="Swim_n_Shoot_Time" />
+                <ScalarProperty Name="Swim_n_Shoot" ColumnName="Swim_n_Shoot" />
+                <ScalarProperty Name="Baseball_Place" ColumnName="Baseball_Place" />
+                <ScalarProperty Name="Baseball" ColumnName="Baseball" />
+                <ScalarProperty Name="Slip_Flip_Time" ColumnName="Slip_Flip_Time" />
+                <ScalarProperty Name="Slip_Flip" ColumnName="Slip_Flip" />
+                <ScalarProperty Name="High_Noon_Place" ColumnName="High_Noon_Place" />
+                <ScalarProperty Name="High_Noon" ColumnName="High_Noon" />
+                <ScalarProperty Name="Survivor_Flip_CupPlace" ColumnName="Survivor_Flip_CupPlace" />
+                <ScalarProperty Name="Survivor_Flip_Cup" ColumnName="Survivor_Flip_Cup" />
+                <ScalarProperty Name="Dizzy_Bat_Time" ColumnName="Dizzy_Bat_Time" />
+                <ScalarProperty Name="Dizzy_Bat" ColumnName="Dizzy_Bat" />
+                <ScalarProperty Name="Corn_Hole_Place" ColumnName="Corn_Hole_Place" />
+                <ScalarProperty Name="Corn_Hole" ColumnName="Corn_Hole" />
+                <ScalarProperty Name="Civil_War_Place" ColumnName="Civil_War_Place" />
+                <ScalarProperty Name="Civil_War" ColumnName="Civil_War" />
+                <ScalarProperty Name="Boat_Race_Time" ColumnName="Boat_Race_Time" />
+                <ScalarProperty Name="Boat_Race" ColumnName="Boat_Race" />
+                <ScalarProperty Name="Chugalug_Time" ColumnName="Chugalug_Time" />
+                <ScalarProperty Name="Chugalug" ColumnName="Chugalug" />
+                <ScalarProperty Name="Beer_Pong_Place" ColumnName="Beer_Pong_Place" />
+                <ScalarProperty Name="Beer_Pong" ColumnName="Beer_Pong" />
+                <ScalarProperty Name="Olympics_Date" ColumnName="Olympics_Date" />
+                <ScalarProperty Name="Team_Member_05" ColumnName="Team_Member_05" />
+                <ScalarProperty Name="Team_Member_04" ColumnName="Team_Member_04" />
+                <ScalarProperty Name="Team_Member_03" ColumnName="Team_Member_03" />
+                <ScalarProperty Name="Team_Member_02" ColumnName="Team_Member_02" />
+                <ScalarProperty Name="Team_Member_01" ColumnName="Team_Member_01" />
+                <ScalarProperty Name="Team_Country" ColumnName="Team_Country" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

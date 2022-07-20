@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Beer_Olympics.Team>
 
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
 <h2>Index</h2>
@@ -11,57 +11,53 @@
 </p>
 <table class="table">
     <tr>
+        
         <th>
-            @Html.DisplayNameFor(model => model.Team_Country_ID)
+          Country
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Team_Country)
+            Beer Pong
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Team_Member_01)
+            Baseball
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Team_Member_02)
+            Chugalug
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Team_Member_03)
+            Corn Hole
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Team_Member_04)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Team_Member_05)
+            Speed Ball
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Team_Country_ID)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.Team_Country)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Team_Member_01)
+            @Html.DisplayFor(modelItem => item.Beer_Pong)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Team_Member_02)
+            @Html.DisplayFor(modelItem => item.Baseball)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Team_Member_03)
+            @Html.DisplayFor(modelItem => item.Chugalug)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Team_Member_04)
+            @Html.DisplayFor(modelItem => item.Corn_Hole)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Team_Member_05)
+            @Html.DisplayFor(modelItem => item.Speed_Ball)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @*@Html.ActionLink("", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
         </td>
     </tr>
 }

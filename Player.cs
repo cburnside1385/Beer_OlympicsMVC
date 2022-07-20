@@ -18,6 +18,6 @@ namespace Beer_Olympics
         public int Player_ID { get; set; }
         public string Player_Name { get; set; }
         public Nullable<System.DateTime> Olympics_Date { get; set; }
-        public Nullable<int> Team_Country_ID { get; set; }
+        public string Team_Country_ID { get; set; }
     }
 }
