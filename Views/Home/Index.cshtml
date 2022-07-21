@@ -22,10 +22,10 @@
     <div id="tabsHomeBrackets">
         <div class="tabsbracket">
             <ul>
-                <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#tabsbeerpong">Beer Pong</a></li>
+                <li class="tab tabsHome tabsHome-Scoreboard"><a href="#tabsbeerpong">Beer Pong</a></li>
                 <li class="tab tabsHome tabsHome-Brackets"><a href="#Baseball">Baseball</a></li>
                 <li class="tab tabsHome tabsHome-Brackets"><a href="#Civil">Civil War</a></li>
-                <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#Cornhole">Cornhole</a></li>
+                <li class="tab tabsHome tabsHome-Scoreboard"><a href="#Cornhole">Cornhole</a></li>
                 <li class="tab tabsHome tabsHome-Brackets"><a href="#Flip">Flip-Cup</a></li>
                 <li class="tab tabsHome tabsHome-Brackets"><a href="#High">High-Noon</a></li>
                 <li class="tab tabsHome tabsHome-Brackets"><a href="#SpeedBall">SpeedBall</a></li>
@@ -67,25 +67,39 @@
     <div id="tabsHomeTimes">
         <div class="tabstimes">
             <ul>
-                <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#tabsbeerpong">Boat Race</a></li>
-                <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeBrackets">Chugalug</a></li>
+                <li class="tab tabsHome Boat"><a href="#Boat">Boat Race</a></li>
+                <li class="tab tabsHome Chug"><a href="#Chug">Chugalug</a></li>
+                <li class="tab tabsHome Slip"><a href="#Slip">Slip N' Flip</a></li>
+                <li class="tab tabsHome Swim"><a href="#Swim">Swim N' Shoot</a></li>
+                <li class="tab tabsHome Dizzy"><a href="#Dizzy">Dizzy Bat</a></li>
 
 
 
 
             </ul>
-            @*<div id="tabsbeerpong">
-                    @Html.Action("Beerpongbracket", "Games")
+            <div id="Boat">
+                @Html.Action("Boat", "Games")
 
-                </div>
-                <div id="tabsbeerpong">
-                    @Html.Action("Baseball", "Games")
+            </div>
+            <div id="Chug">
+                @Html.Action("Chug", "Games")
+            </div>
+            <div id="Slip">
+                @Html.Action("Slip", "Games")
 
-                </div>*@
+            </div>
+            <div id="Swim">
+                @Html.Action("Swim", "Games")
+            </div>
+            <div id="Dizzy">
+                @Html.Action("Dizzy", "Games")
+
+            </div>
+
         </div>
     </div>
     <div id="tabsHomeScoreboard">
-        @Html.Action("Index", "Teams")
+        @Html.Action("ScoreBoard", "Teams")
 
     </div>
     <div id="Teams">
@@ -95,6 +109,7 @@
 </div>
 
 <script>
+   const rootUrl = '@Url.Content("~/")'
     $(function () {
 
         $('.tabsHome, .tabsbracket,.tabstimes').tabs();
@@ -103,4 +118,47 @@
     window.onbeforeunload = function () { return false; }
 
 
+
+ 
+    $(".Boat").one("click", function () {
+
+        var scripturl = rootUrl + "Scripts/CustomScripts/Boat.js"
+        $.getScript(scripturl, function () {
+
+
+        });
+    });
+    $(".Chug").one("click", function () {
+  
+        var scripturl = rootUrl + "Scripts/CustomScripts/Chugalug.js"
+        $.getScript(scripturl, function(){
+
+
+        });
+    });
+    $(".Swim").one("click", function () {
+
+        var scripturl = rootUrl + "Scripts/CustomScripts/Swim.js"
+        $.getScript(scripturl, function () {
+
+
+        });
+    });
+    $(".Slip").one("click", function () {
+
+        var scripturl = rootUrl + "Scripts/CustomScripts/Slip.js"
+        $.getScript(scripturl, function () {
+
+
+        });
+    });
+    $(".Dizzy").one("click", function () {
+
+        var scripturl = rootUrl + "Scripts/CustomScripts/Dizzy.js"
+        $.getScript(scripturl, function () {
+
+
+        });
+    });
+ 
 </script>

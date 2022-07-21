@@ -173,6 +173,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Rings.PNG" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -235,6 +236,24 @@
     <Content Include="Drinking.edmx.diagram">
       <DependentUpon>Drinking.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\alertify\alertify.js" />
+    <Content Include="Scripts\alertify\alertify.min.js" />
+    <Content Include="Scripts\alertify\css\alertify.css" />
+    <Content Include="Scripts\alertify\css\alertify.min.css" />
+    <Content Include="Scripts\alertify\css\alertify.rtl.css" />
+    <Content Include="Scripts\alertify\css\alertify.rtl.min.css" />
+    <Content Include="Scripts\alertify\css\themes\bootstrap.css" />
+    <Content Include="Scripts\alertify\css\themes\bootstrap.min.css" />
+    <Content Include="Scripts\alertify\css\themes\bootstrap.rtl.css" />
+    <Content Include="Scripts\alertify\css\themes\bootstrap.rtl.min.css" />
+    <Content Include="Scripts\alertify\css\themes\default.css" />
+    <Content Include="Scripts\alertify\css\themes\default.min.css" />
+    <Content Include="Scripts\alertify\css\themes\default.rtl.css" />
+    <Content Include="Scripts\alertify\css\themes\default.rtl.min.css" />
+    <Content Include="Scripts\alertify\css\themes\semantic.css" />
+    <Content Include="Scripts\alertify\css\themes\semantic.min.css" />
+    <Content Include="Scripts\alertify\css\themes\semantic.rtl.css" />
+    <Content Include="Scripts\alertify\css\themes\semantic.rtl.min.css" />
     <Content Include="Scripts\AutoFill-2.4.0\css\autoFill.bootstrap.css" />
     <Content Include="Scripts\AutoFill-2.4.0\css\autoFill.bootstrap.min.css" />
     <Content Include="Scripts\AutoFill-2.4.0\css\autoFill.bootstrap4.css" />
@@ -343,6 +362,11 @@
     <Content Include="Scripts\ColReorder-1.5.6\js\colReorder.semanticui.min.js" />
     <Content Include="Scripts\ColReorder-1.5.6\js\dataTables.colReorder.js" />
     <Content Include="Scripts\ColReorder-1.5.6\js\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\CustomScripts\Boat.js" />
+    <Content Include="Scripts\CustomScripts\Dizzy.js" />
+    <Content Include="Scripts\CustomScripts\Swim.js" />
+    <Content Include="Scripts\CustomScripts\Slip.js" />
+    <Content Include="Scripts\CustomScripts\Chugalug.js" />
     <Content Include="Scripts\DataTables-1.12.1\css\dataTables.bootstrap.css" />
     <Content Include="Scripts\DataTables-1.12.1\css\dataTables.bootstrap.min.css" />
     <Content Include="Scripts\DataTables-1.12.1\css\dataTables.bootstrap4.css" />
@@ -814,7 +838,7 @@
     <Content Include="Scripts\Select-1.4.0\js\select.jqueryui.min.js" />
     <Content Include="Scripts\Select-1.4.0\js\select.semanticui.js" />
     <Content Include="Scripts\Select-1.4.0\js\select.semanticui.min.js" />
-    <Content Include="Scripts\SscoreBoard.js" />
+    <Content Include="Scripts\CustomScripts\SscoreBoard.js" />
     <Content Include="Scripts\StateRestore-1.1.1\css\stateRestore.bootstrap.css" />
     <Content Include="Scripts\StateRestore-1.1.1\css\stateRestore.bootstrap.min.css" />
     <Content Include="Scripts\StateRestore-1.1.1\css\stateRestore.bootstrap4.css" />
@@ -872,7 +896,7 @@
     <Content Include="Views\Teams\Delete.cshtml" />
     <Content Include="Views\Teams\Details.cshtml" />
     <Content Include="Views\Teams\Edit.cshtml" />
-    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\Teams\ScoreBoard.cshtml" />
     <Content Include="Views\Games\Create.cshtml" />
     <Content Include="Views\Games\Delete.cshtml" />
     <Content Include="Views\Games\Details.cshtml" />
@@ -884,6 +908,11 @@
     <Content Include="Views\Games\SpeedballBracket.cshtml" />
     <Content Include="Views\Games\CornholeBracket.cshtml" />
     <Content Include="Views\Games\FlipcupBracket.cshtml" />
+    <Content Include="Views\Games\Chug.cshtml" />
+    <Content Include="Views\Games\Boat.cshtml" />
+    <Content Include="Views\Games\Slip.cshtml" />
+    <Content Include="Views\Games\Swim.cshtml" />
+    <Content Include="Views\Games\Dizzy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

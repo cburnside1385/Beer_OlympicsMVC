@@ -16,6 +16,172 @@ namespace Beer_Olympics.Controllers
 
 
         // GET: Games
+
+        public JsonResult All_Time()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Boat_Race,
+                              c.Boat_Race_Time,
+                              c.Chugalug,
+                              c.Chugalug_Time,
+                              c.Swim_n_Shoot,
+                              c.Swim_n_Shoot_Time,
+                              c.Slip_Flip,
+                              c.Slip_Flip_Time,
+                              c.Dizzy_Bat,
+                              c.Dizzy_Bat_Time,
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
+        public JsonResult ChugTime()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Chugalug,
+                              c.Chugalug_Time,
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Chug()
+        {
+            return View(db.Teams.ToList());
+        }
+
+        public JsonResult Boat_Time()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Boat_Race,
+                              c.Boat_Race_Time
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Boat()
+        {
+            IEnumerable<SelectListItem> players = db.Teams
+         .Where(c => c.Team_Country != null)
+         .OrderBy(c => c.Team_Country)
+         .Select(c => new SelectListItem
+         {
+
+             Value = c.Team_Country,
+             Text = c.Team_Country
+
+
+         }).Distinct();
+            var playas = players.OrderBy(a => Guid.NewGuid()).ToList();
+            ViewBag.PlayerList = playas;
+            return View(db.Teams.ToList());
+        }
+
+
+        public JsonResult Dizzy_Time()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Dizzy_Bat,
+                              c.Dizzy_Bat_Time,
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Dizzy()
+        {
+            return View(db.Teams.ToList());
+        }
+        public JsonResult Slip_Time()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Slip_Flip,
+                              c.Slip_Flip_Time,
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Slip()
+        {
+            return View(db.Teams.ToList());
+        }
+        public JsonResult SwimTime()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Swim_n_Shoot,
+                              c.Swim_n_Shoot_Time,
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Swim()
+        {
+            return View(db.Teams.ToList());
+        }
+
         public ActionResult BeerPongBracket()
         {
 

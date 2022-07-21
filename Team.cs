@@ -25,25 +25,25 @@ namespace Beer_Olympics
         public Nullable<int> Beer_Pong { get; set; }
         public Nullable<int> Beer_Pong_Place { get; set; }
         public Nullable<int> Chugalug { get; set; }
-        public Nullable<System.TimeSpan> Chugalug_Time { get; set; }
+        public string Chugalug_Time { get; set; }
         public Nullable<int> Boat_Race { get; set; }
-        public Nullable<System.TimeSpan> Boat_Race_Time { get; set; }
+        public string Boat_Race_Time { get; set; }
         public Nullable<int> Civil_War { get; set; }
         public Nullable<int> Civil_War_Place { get; set; }
         public Nullable<int> Corn_Hole { get; set; }
         public Nullable<int> Corn_Hole_Place { get; set; }
         public Nullable<int> Dizzy_Bat { get; set; }
-        public Nullable<int> Dizzy_Bat_Time { get; set; }
+        public string Dizzy_Bat_Time { get; set; }
         public Nullable<int> Survivor_Flip_Cup { get; set; }
         public Nullable<int> Survivor_Flip_CupPlace { get; set; }
         public Nullable<int> High_Noon { get; set; }
         public Nullable<int> High_Noon_Place { get; set; }
         public Nullable<int> Slip_Flip { get; set; }
-        public Nullable<System.TimeSpan> Slip_Flip_Time { get; set; }
+        public string Slip_Flip_Time { get; set; }
         public Nullable<int> Baseball { get; set; }
-        public string Baseball_Place { get; set; }
+        public Nullable<int> Baseball_Place { get; set; }
         public Nullable<int> Swim_n_Shoot { get; set; }
-        public Nullable<System.TimeSpan> Swim_n_Shoot_Time { get; set; }
+        public string Swim_n_Shoot_Time { get; set; }
         public Nullable<int> Quarters { get; set; }
         public Nullable<int> Quarters_Place { get; set; }
         public Nullable<int> Pool_Pig { get; set; }

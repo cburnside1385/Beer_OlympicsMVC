@@ -18,7 +18,7 @@ namespace Beer_Olympics.Controllers
 
 
 
-        public JsonResult Scoreboard()
+        public JsonResult ScoreboardResults()
 
         {
             var scores = (from c in db.Teams
@@ -69,25 +69,12 @@ namespace Beer_Olympics.Controllers
                 return jsonResult;
 
                          }
-        public ActionResult Index()
+        public ActionResult ScoreBoard()
         {
             return View(db.Teams.ToList());
         }
 
-        // GET: Teams/Details/5
-        public ActionResult Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Team team = db.Teams.Find(id);
-            if (team == null)
-            {
-                return HttpNotFound();
-            }
-            return View(team);
-        }
+      
 
         // GET: Teams/Create
         public ActionResult Create()
@@ -364,6 +351,16 @@ namespace Beer_Olympics.Controllers
                 db.Entry(model).Property(x => x.Team_Member_03).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_04).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_05).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race_Time).IsModified = false;        
+                db.Entry(model).Property(x => x.Chugalug).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug_Time).IsModified = false;
                 db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
                 db.SaveChanges();
                 return Json(new { returnvalue = result }, JsonRequestBehavior.AllowGet);
@@ -372,6 +369,279 @@ namespace Beer_Olympics.Controllers
             }
             return Json("Failed", JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult ScoreboardChug(Team model)
+
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                bool result = true;
+                db.Entry(model).State = EntityState.Modified;                 
+                db.Entry(model).Property(x => x.Team_Country).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_03).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_04).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_05).IsModified = false;
+                db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong_Place).IsModified = false;
+                //db.Entry(model).Property(x => x.Chugalug).IsModified = false;
+                //db.Entry(model).Property(x => x.Chugalug_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_Cup).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_CupPlace).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig_place).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball_Place).IsModified = false;
+
+                db.SaveChanges();
+                return Json(new { returnvalue = result }, JsonRequestBehavior.AllowGet);
+
+
+            }
+            return Json("Failed", JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public JsonResult ScoreboardDizzy(Team model)
+
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                bool result = true;
+                db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Country).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_03).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_04).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_05).IsModified = false;
+                db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole_Place).IsModified = false;
+                //db.Entry(model).Property(x => x.Dizzy_Bat).IsModified = false;
+                //db.Entry(model).Property(x => x.Dizzy_Bat_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_Cup).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_CupPlace).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig_place).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball_Place).IsModified = false;
+
+                db.SaveChanges();
+                return Json(new { returnvalue = result }, JsonRequestBehavior.AllowGet);
+
+
+            }
+            return Json("Failed", JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult ScoreboardBoat(Team model)
+
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                bool result = true;
+                db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Country).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_03).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_04).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_05).IsModified = false;
+                db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug_Time).IsModified = false;
+                //db.Entry(model).Property(x => x.Boat_Race).IsModified = false;
+                //db.Entry(model).Property(x => x.Boat_Race_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_Cup).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_CupPlace).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig_place).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball_Place).IsModified = false;
+
+                db.SaveChanges();
+                return Json(new { returnvalue = result }, JsonRequestBehavior.AllowGet);
+
+
+            }
+            return Json("Failed", JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult ScoreboardSwim(Team model)
+
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                bool result = true;
+                db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Country).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_03).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_04).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_05).IsModified = false;
+                db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_Cup).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_CupPlace).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip).IsModified = false;
+                db.Entry(model).Property(x => x.Slip_Flip_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball_Place).IsModified = false;
+                //db.Entry(model).Property(x => x.Swim_n_Shoot).IsModified = false;
+                //db.Entry(model).Property(x => x.Swim_n_Shoot_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig_place).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball_Place).IsModified = false;
+
+                db.SaveChanges();
+                return Json(new { returnvalue = result }, JsonRequestBehavior.AllowGet);
+
+
+            }
+            return Json("Failed", JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult ScoreboardSlip(Team model)
+
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                bool result = true;
+                db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Country).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_03).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_04).IsModified = false;
+                db.Entry(model).Property(x => x.Team_Member_05).IsModified = false;
+                db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong).IsModified = false;
+                db.Entry(model).Property(x => x.Beer_Pong_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug).IsModified = false;
+                db.Entry(model).Property(x => x.Chugalug_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race).IsModified = false;
+                db.Entry(model).Property(x => x.Boat_Race_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War).IsModified = false;
+                db.Entry(model).Property(x => x.Civil_War_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole).IsModified = false;
+                db.Entry(model).Property(x => x.Corn_Hole_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat).IsModified = false;
+                db.Entry(model).Property(x => x.Dizzy_Bat_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_Cup).IsModified = false;
+                db.Entry(model).Property(x => x.Survivor_Flip_CupPlace).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon).IsModified = false;
+                db.Entry(model).Property(x => x.High_Noon_Place).IsModified = false;
+                //db.Entry(model).Property(x => x.Slip_Flip).IsModified = false;
+                //db.Entry(model).Property(x => x.Slip_Flip_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball).IsModified = false;
+                db.Entry(model).Property(x => x.Baseball_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot).IsModified = false;
+                db.Entry(model).Property(x => x.Swim_n_Shoot_Time).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters).IsModified = false;
+                db.Entry(model).Property(x => x.Quarters_Place).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig).IsModified = false;
+                db.Entry(model).Property(x => x.Pool_Pig_place).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball).IsModified = false;
+                db.Entry(model).Property(x => x.Speed_Ball_Place).IsModified = false;
+
+                db.SaveChanges();
+                return Json(new { returnvalue = result }, JsonRequestBehavior.AllowGet);
+
+
+            }
+            return Json("Failed", JsonRequestBehavior.AllowGet);
+        }
+
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)

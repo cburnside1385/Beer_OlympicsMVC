@@ -62,25 +62,25 @@
           <Property Name="Beer_Pong" Type="int" />
           <Property Name="Beer_Pong_Place" Type="int" />
           <Property Name="Chugalug" Type="int" />
-          <Property Name="Chugalug_Time" Type="time" Precision="7" />
+          <Property Name="Chugalug_Time" Type="nvarchar" MaxLength="50" />
           <Property Name="Boat_Race" Type="int" />
-          <Property Name="Boat_Race_Time" Type="time" Precision="7" />
+          <Property Name="Boat_Race_Time" Type="nvarchar" MaxLength="50" />
           <Property Name="Civil_War" Type="int" />
           <Property Name="Civil_War_Place" Type="int" />
           <Property Name="Corn_Hole" Type="int" />
           <Property Name="Corn_Hole_Place" Type="int" />
           <Property Name="Dizzy_Bat" Type="int" />
-          <Property Name="Dizzy_Bat_Time" Type="int" />
+          <Property Name="Dizzy_Bat_Time" Type="nvarchar" MaxLength="50" />
           <Property Name="Survivor_Flip_Cup" Type="int" />
           <Property Name="Survivor_Flip_CupPlace" Type="int" />
           <Property Name="High_Noon" Type="int" />
           <Property Name="High_Noon_Place" Type="int" />
           <Property Name="Slip_Flip" Type="int" />
-          <Property Name="Slip_Flip_Time" Type="time" Precision="7" />
+          <Property Name="Slip_Flip_Time" Type="nvarchar" MaxLength="50" />
           <Property Name="Baseball" Type="int" />
-          <Property Name="Baseball_Place" Type="nchar" MaxLength="10" />
+          <Property Name="Baseball_Place" Type="int" />
           <Property Name="Swim_n_Shoot" Type="int" />
-          <Property Name="Swim_n_Shoot_Time" Type="time" Precision="7" />
+          <Property Name="Swim_n_Shoot_Time" Type="nvarchar" MaxLength="50" />
           <Property Name="Quarters" Type="int" />
           <Property Name="Quarters_Place" Type="int" />
           <Property Name="Pool_Pig" Type="int" />
@@ -161,25 +161,25 @@
           <Property Name="Beer_Pong" Type="Int32" />
           <Property Name="Beer_Pong_Place" Type="Int32" />
           <Property Name="Chugalug" Type="Int32" />
-          <Property Name="Chugalug_Time" Type="Time" Precision="7" />
+          <Property Name="Chugalug_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Boat_Race" Type="Int32" />
-          <Property Name="Boat_Race_Time" Type="Time" Precision="7" />
+          <Property Name="Boat_Race_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Civil_War" Type="Int32" />
           <Property Name="Civil_War_Place" Type="Int32" />
           <Property Name="Corn_Hole" Type="Int32" />
           <Property Name="Corn_Hole_Place" Type="Int32" />
           <Property Name="Dizzy_Bat" Type="Int32" />
-          <Property Name="Dizzy_Bat_Time" Type="Int32" />
+          <Property Name="Dizzy_Bat_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Survivor_Flip_Cup" Type="Int32" />
           <Property Name="Survivor_Flip_CupPlace" Type="Int32" />
           <Property Name="High_Noon" Type="Int32" />
           <Property Name="High_Noon_Place" Type="Int32" />
           <Property Name="Slip_Flip" Type="Int32" />
-          <Property Name="Slip_Flip_Time" Type="Time" Precision="7" />
+          <Property Name="Slip_Flip_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Baseball" Type="Int32" />
-          <Property Name="Baseball_Place" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Baseball_Place" Type="Int32" />
           <Property Name="Swim_n_Shoot" Type="Int32" />
-          <Property Name="Swim_n_Shoot_Time" Type="Time" Precision="7" />
+          <Property Name="Swim_n_Shoot_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Quarters" Type="Int32" />
           <Property Name="Quarters_Place" Type="Int32" />
           <Property Name="Pool_Pig" Type="Int32" />
