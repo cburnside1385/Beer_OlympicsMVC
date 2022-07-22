@@ -44,21 +44,7 @@ namespace Beer_Olympics.Controllers
         // POST: Players/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Player_ID,Player_Name,Olympics_Date")] Player player)
-        {
-            if (ModelState.IsValid)
-            {
-                player.ID = Guid.NewGuid();
-                db.Players.Add(player);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(player);
-        }
-
+      
         // GET: Players/Edit/5
         public ActionResult Edit(Guid? id)
         {
@@ -79,7 +65,7 @@ namespace Beer_Olympics.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Player_ID,Player_Name,Olympics_Date")] Player player)
+        public ActionResult Edit([Bind(Include = "Player_Player_Name,Olympics_Date")] Player player)
         {
             if (ModelState.IsValid)
             {

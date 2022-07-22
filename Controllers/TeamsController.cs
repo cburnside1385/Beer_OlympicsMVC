@@ -26,6 +26,7 @@ namespace Beer_Olympics.Controllers
                           select new
                           {
                               c.ID,
+                              c.Team_Flag,
                               c.Team_Country,
                               c.Team_Member_01,
                               c.Team_Member_02,
@@ -85,7 +86,7 @@ namespace Beer_Olympics.Controllers
                 .Select(c => new SelectListItem
                 {
 
-                    Value = c.ID.ToString(),
+                    Value = c.Player_ID.ToString(),
                     Text = c.Player_Name
 
 
@@ -110,7 +111,7 @@ namespace Beer_Olympics.Controllers
               .Select(c => new SelectListItem
               {
 
-                  Value = c.ID.ToString(),
+                  Value = c.Player_ID.ToString(),
                   Text = c.Player_Name
 
 
@@ -188,7 +189,7 @@ namespace Beer_Olympics.Controllers
                            {
                                c.Player_Name,
                                c.Player_ID,
-                               c.ID,
+                               
 
 
                            });
@@ -202,6 +203,35 @@ namespace Beer_Olympics.Controllers
 
 
     }
+
+
+
+        public ActionResult TeamsList(string date)
+
+        {
+            var teams = (from c in db.Teams
+                           where (c.Olympics_Date.ToString().Substring(0, 4) == date) && (c.Team_Member_01 != null)
+                           orderby c.Team_Country
+                           select new
+                           {
+                               c.Team_Country,
+                               c.Team_Member_01,
+                               c.Team_Member_02,
+                               c.Team_Member_03,
+                               c.Team_Member_04,
+                               c.Team_Member_05,
+                               c.Team_Flag,
+                           }) ;
+
+
+            return base.Json(new
+            {
+                teams
+
+            }, JsonRequestBehavior.AllowGet);
+
+
+        }
 
 
 
@@ -309,9 +339,40 @@ namespace Beer_Olympics.Controllers
                     
                     
                     
-                    }
+         }
+
+        [HttpPost]
+        public JsonResult CreatePlayer(List<Player> player)
+
+        {
+            using (DrinkingEntities entities = new DrinkingEntities())
+            {
 
 
+
+                if (player == null)
+                {
+
+                    player = new List<Player>();
+
+                }
+
+
+                foreach (Player players in player)
+                {
+
+
+
+                    entities.Players.Add(players);
+
+                }
+                int insertedRecords = entities.SaveChanges();
+                return Json(insertedRecords);
+            }
+
+
+
+        }
         [HttpPost]
         public JsonResult UpdatePlayer(Player model)
 
@@ -322,6 +383,7 @@ namespace Beer_Olympics.Controllers
             {
                 bool result = true;
                 db.Entry(model).State = EntityState.Modified;
+
                 db.Entry(model).Property(x => x.Player_ID).IsModified = false;
                 db.Entry(model).Property(x => x.Player_Name).IsModified = false;
                 db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
@@ -345,6 +407,7 @@ namespace Beer_Olympics.Controllers
             {
                 bool result = true;
                 db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Flag).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Country).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
@@ -379,7 +442,8 @@ namespace Beer_Olympics.Controllers
             if (ModelState.IsValid)
             {
                 bool result = true;
-                db.Entry(model).State = EntityState.Modified;                 
+                db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Flag).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Country).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
@@ -433,6 +497,7 @@ namespace Beer_Olympics.Controllers
             {
                 bool result = true;
                 db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Flag).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Country).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
@@ -487,6 +552,7 @@ namespace Beer_Olympics.Controllers
             {
                 bool result = true;
                 db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Flag).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Country).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
@@ -542,6 +608,7 @@ namespace Beer_Olympics.Controllers
             {
                 bool result = true;
                 db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Flag).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Country).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;
@@ -597,6 +664,7 @@ namespace Beer_Olympics.Controllers
             {
                 bool result = true;
                 db.Entry(model).State = EntityState.Modified;
+                db.Entry(model).Property(x => x.Team_Flag).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Country).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_01).IsModified = false;
                 db.Entry(model).Property(x => x.Team_Member_02).IsModified = false;

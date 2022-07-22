@@ -26,8 +26,8 @@ namespace Beer_Olympics
         }
     
         public virtual DbSet<Country> Countries { get; set; }
-        public virtual DbSet<Game> Games { get; set; }
-        public virtual DbSet<Player> Players { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
+        public virtual DbSet<Player> Players { get; set; }
+        public virtual DbSet<Game> Games { get; set; }
     }
 }

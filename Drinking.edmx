@@ -15,33 +15,17 @@
         </EntityType>
         <EntityType Name="Games">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Game_ID" />
           </Key>
-          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Game_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Game_Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Game_Type" Type="nvarchar" MaxLength="50" />
-          <Property Name="Game_Rule_01" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_02" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_03" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_04" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_05" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_06" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_07" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_08" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_09" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_10" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_11" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_12" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_13" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_14" Type="nvarchar(max)" />
-          <Property Name="Game_Rule_15" Type="nvarchar(max)" />
+          <Property Name="Game_Rules" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Players">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Player_ID" />
           </Key>
-          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Player_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Player_Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Olympics_Date" Type="date" />
@@ -52,6 +36,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Team_Flag" Type="nvarchar" MaxLength="250" />
           <Property Name="Team_Country" Type="nvarchar" MaxLength="50" />
           <Property Name="Team_Member_01" Type="nvarchar" MaxLength="50" />
           <Property Name="Team_Member_02" Type="nvarchar" MaxLength="50" />
@@ -106,46 +91,12 @@
           <Property Name="Country_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Country_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Game">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Game_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Game_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_01" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_02" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_03" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_04" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_05" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_06" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_07" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_08" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_09" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_11" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_12" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_13" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_14" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Game_Rule_15" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityContainer Name="DrinkingEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Countries" EntityType="Self.Country" />
-          <EntitySet Name="Games" EntityType="Self.Game" />
-          <EntitySet Name="Players" EntityType="DrinkingModel.Player" />
           <EntitySet Name="Teams" EntityType="DrinkingModel.Team" />
+          <EntitySet Name="Players" EntityType="DrinkingModel.Player" />
+          <EntitySet Name="Games" EntityType="DrinkingModel.Game" />
         </EntityContainer>
-        <EntityType Name="Player">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Player_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Player_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Olympics_Date" Type="DateTime" Precision="0" />
-          <Property Name="Team_Country_ID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Team">
           <Key>
             <PropertyRef Name="ID" />
@@ -186,6 +137,25 @@
           <Property Name="Pool_Pig_place" Type="Int32" />
           <Property Name="Speed_Ball" Type="Int32" />
           <Property Name="Speed_Ball_Place" Type="Int32" />
+          <Property Name="Team_Flag" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Player_ID" />
+          </Key>
+          <Property Name="Player_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Player_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Olympics_Date" Type="DateTime" Precision="0" />
+          <Property Name="Team_Country_ID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Game_ID" />
+          </Key>
+          <Property Name="Game_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Game_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -202,45 +172,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Games">
-            <EntityTypeMapping TypeName="DrinkingModel.Game">
-              <MappingFragment StoreEntitySet="Games">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Game_ID" ColumnName="Game_ID" />
-                <ScalarProperty Name="Game_Name" ColumnName="Game_Name" />
-                <ScalarProperty Name="Game_Type" ColumnName="Game_Type" />
-                <ScalarProperty Name="Game_Rule_01" ColumnName="Game_Rule_01" />
-                <ScalarProperty Name="Game_Rule_02" ColumnName="Game_Rule_02" />
-                <ScalarProperty Name="Game_Rule_03" ColumnName="Game_Rule_03" />
-                <ScalarProperty Name="Game_Rule_04" ColumnName="Game_Rule_04" />
-                <ScalarProperty Name="Game_Rule_05" ColumnName="Game_Rule_05" />
-                <ScalarProperty Name="Game_Rule_06" ColumnName="Game_Rule_06" />
-                <ScalarProperty Name="Game_Rule_07" ColumnName="Game_Rule_07" />
-                <ScalarProperty Name="Game_Rule_08" ColumnName="Game_Rule_08" />
-                <ScalarProperty Name="Game_Rule_09" ColumnName="Game_Rule_09" />
-                <ScalarProperty Name="Game_Rule_10" ColumnName="Game_Rule_10" />
-                <ScalarProperty Name="Game_Rule_11" ColumnName="Game_Rule_11" />
-                <ScalarProperty Name="Game_Rule_12" ColumnName="Game_Rule_12" />
-                <ScalarProperty Name="Game_Rule_13" ColumnName="Game_Rule_13" />
-                <ScalarProperty Name="Game_Rule_14" ColumnName="Game_Rule_14" />
-                <ScalarProperty Name="Game_Rule_15" ColumnName="Game_Rule_15" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Players">
-            <EntityTypeMapping TypeName="DrinkingModel.Player">
-              <MappingFragment StoreEntitySet="Players">
-                <ScalarProperty Name="Team_Country_ID" ColumnName="Team_Country_ID" />
-                <ScalarProperty Name="Olympics_Date" ColumnName="Olympics_Date" />
-                <ScalarProperty Name="Player_Name" ColumnName="Player_Name" />
-                <ScalarProperty Name="Player_ID" ColumnName="Player_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Teams">
             <EntityTypeMapping TypeName="DrinkingModel.Team">
               <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="Team_Flag" ColumnName="Team_Flag" />
                 <ScalarProperty Name="Speed_Ball_Place" ColumnName="Speed_Ball_Place" />
                 <ScalarProperty Name="Speed_Ball" ColumnName="Speed_Ball" />
                 <ScalarProperty Name="Pool_Pig_place" ColumnName="Pool_Pig_place" />
@@ -277,6 +212,26 @@
                 <ScalarProperty Name="Team_Member_01" ColumnName="Team_Member_01" />
                 <ScalarProperty Name="Team_Country" ColumnName="Team_Country" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="DrinkingModel.Player">
+              <MappingFragment StoreEntitySet="Players">
+                <ScalarProperty Name="Team_Country_ID" ColumnName="Team_Country_ID" />
+                <ScalarProperty Name="Olympics_Date" ColumnName="Olympics_Date" />
+                <ScalarProperty Name="Player_Name" ColumnName="Player_Name" />
+                <ScalarProperty Name="Player_ID" ColumnName="Player_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="DrinkingModel.Game">
+              <MappingFragment StoreEntitySet="Games">
+                <ScalarProperty Name="Game_Rules" ColumnName="Game_Rules" />
+                <ScalarProperty Name="Game_Type" ColumnName="Game_Type" />
+                <ScalarProperty Name="Game_Name" ColumnName="Game_Name" />
+                <ScalarProperty Name="Game_ID" ColumnName="Game_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

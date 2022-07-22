@@ -1,16 +1,22 @@
 ﻿
+<head>
+    <link href="~/Content/WholesiteStyles.css" rel="stylesheet" />
+    <script src="~/Scripts/CustomScripts/SscoreBoard.js"></script>
+</head>
 
-
-<div style="background-color:#dee2e6;padding-top:10px" id="tabs-Home" class="tabsHome">
+<div id="Start">
+    <img style="width:100%;height:100%"src="~/Content/Start_Screen.gif" />
+</div>
+<div style="display:none;background-color:#dee2e6;padding-top:10px;width:100%" id="tabs-Home" class="tabsHome">
     <div>
         <ul>
             <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#tabsHomeScoreboard">Scoreboard</a></li>
 
             <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeBrackets">Brackets</a></li>
-            <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeTimes">Timed Events</a></li>
-            <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeSchedule">Schedule</a></li>
+            <li class="tab tabsHome Times"><a href="#tabsHomeTimes">Timed Events</a></li>
+            @*<li class="tab tabsHome tabsHome-Brackets"><a href="#Schedule">Schedule</a></li>*@
             <li class="tab tabsHome tabsHome-Brackets"><a href="#Teams">Teams</a></li>
-            <li class="tab tabsHome tabsHome-Brackets"><a href="#tabsHomeRules">Rules</a></li>
+            <li class="tab tabsHome tabsHome-Brackets"><a href="#Rules">Rules</a></li>
 
 
 
@@ -106,6 +112,14 @@
         @Html.Action("Create", "Teams")
 
     </div>
+    <div style="height: 600px;" id="Rules">
+        @Html.Action("Rules", "Games")
+
+    </div>
+    <div style="height: 600px;" id="Schedule">
+        @Html.Action("Schedule", "Games")
+
+    </div>
 </div>
 
 <script>
@@ -120,7 +134,7 @@
 
 
  
-    $(".Boat").one("click", function () {
+    $(".Times").one("click", function () {
 
         var scripturl = rootUrl + "Scripts/CustomScripts/Boat.js"
         $.getScript(scripturl, function () {
@@ -160,5 +174,12 @@
 
         });
     });
- 
+    setTimeout(function ()
+    {
+
+        $('#Start').slideUp('slow')
+        $('#tabs-Home').slideDown('slow')
+        
+
+    },3000)
 </script>

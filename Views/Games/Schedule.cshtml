@@ -1,4 +1,4 @@
-﻿@model Beer_Olympics.Team
+﻿@model Beer_Olympics.Game
 
 @{
     ViewBag.Title = "Create";
@@ -13,7 +13,6 @@
         #draftboard {
             z-index: 9;
             background-color: white;
-            
             text-align: center;
             padding-bottom: 10px;
         }
@@ -21,22 +20,22 @@
         #draftboardheader {
             padding: 10px;
             z-index: 10;
-           
             text-align: center;
             color: Black;
             font-weight: bolder;
             font-size: 32px;
         }
+
         #playersbox {
             padding: 15px;
             z-index: 10;
-      
             border: 1px solid black;
             text-align: center;
             color: white;
             font-weight: bolder;
             font-size: 35px;
         }
+
         #teamsbox {
             padding: 15px;
             z-index: 10;
@@ -47,114 +46,36 @@
             font-size: 35px;
         }
     </style>
-    <div class="container-fluid" style="border: 1px solid black;">
-        <div id="draftboardheader">Draft Board</div>
-        <div style="background-image: url('../../content/rings.png')" class="undrafted row">
 
-        </div>
-    </div>
-    <br />
-    <br />
-    <div  class="form-horizontal">
+    <div class="form-horizontal">
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div style="border:solid 2px black">
-            <div style="padding-top:10px" class="row">
 
-
-                <div class="col-1">
-                    <input type="text" id="CreatePlayer" class=" form-control" />
-                </div>
-                <div class="col-1">
-                    <button  type="button"class="btn-success form-control" id="CreatePlayerButton">Create Player</button>
-                </div>
-
-
-                <input type="text" id="countryflag" hidden />
-                <input type="text" id="count" name="count" hidden />
-
-            </div>
             <br />
             <div style="padding-top:10px" class="col">
 
 
-                <select class="form-control" id="playerNumber"><option value="0">Select Number of Players on Team</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+                @*@Html.DropDownList("games", (IEnumerable<SelectListItem>)ViewBag.GamesList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "gamename" })*@
 
 
 
             </div>
 
             <br />
+            <div class="container-fluid" style="border: 1px solid black;">
+                <div id="draftboardheader">Teams</div>
+                <div style="" class="drafted row">
 
-            <div id="teams">
-                <table>
-                </table>
-                <table id="playertable" style="width:100%">
-                    <tr style="font-weight:bold">
-                        <td id="head"></td>
-                        <td id="head0"></td>
-                        <td id="head1">Country</td>
-                        <td id="head2">Captain</td>
-                        <td id="head3">Player 2</td>
-                        <td id="head4">Player 3</td>
-                        <td id="head5">Player 4</td>
-                        <td id="head6">Player 5</td>
-                    </tr>
-                    <tr>
-
-                    <tr id="tablerow">
-
-                        <td style="width:5%;">
-                            <button type="button" class="form-control save  maxwidth">Save</button>
-                        </td>
-
-                        <td style="width:5%;">
-                            <button type="button" class="form-control Random  maxwidth">Random</button>
-                        </td>
-
-                        <td style="width:15%;">
-                            <input type="text" class="form-control playerTeam maxwidth" id="playerTeam" name="playername" />
-                        </td>
-
-                        <td style="width:15%;">
-                            @Html.DropDownListFor(model => model.Team_Member_01, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername" })
-                        </td>
-
-                        <td style="width:15%;">
-                            @Html.DropDownListFor(model => model.Team_Member_02, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername__" })
-                        </td>
-
-                        <td style="width:15%;">
-                            @Html.DropDownListFor(model => model.Team_Member_03, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername___" })
-                        </td>
-
-                        <td style="width:15%;">
-                            @Html.DropDownListFor(model => model.Team_Member_04, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control  players selectpicker maxwidth dropdown-menu.inner", id = "playername____" })
-                        </td>
-
-                        <td style="width:15%;">
-                            @Html.DropDownListFor(model => model.Team_Member_05, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername_____" })
-                        </td>
-
-                    </tr>
-
-
-                </table>
-                <br />
-                <br />
-
+                </div>
             </div>
+
         </div>
 
         <br />
         <br />
-        <div class="container-fluid" style="border: 1px solid black;">
-            <div id="draftboardheader">Teams</div>
-            <div style="" class="drafted row">
 
-            </div>
-        </div>
     </div>
 }
 
@@ -180,15 +101,15 @@
             dataType: "json",
             contentType: 'application/json; charset=utf-8',
             success: function (r) {
-                var count =1
+                var count = 1
                 const table = $('.undrafted')
                 table.html('');
-               
-            $.each(r.players, function (key, val) {
-                table.append('<div nowrap style="border: 5px solid lightgray" class=col-2 id="playersbox"><div class="player col-12" style=background-color:white;color:black;width:auto%><p>#' + count +'-' + val.Player_Name +'</p></div></div>')
+
+                $.each(r.players, function (key, val) {
+                    table.append('<div nowrap style="border: 5px solid lightgray" class=col-2 id="playersbox"><div class="player col-12" style=background-color:white;color:black;width:auto%><p>#' + count + '-' + val.Player_Name + '</p></div></div>')
                     /*table.append('<tr class=draftrow style=font-size:12px id=' + val.Player_ID + '><td>' + val.Player_Name + '</td>/<tr>')*/
 
-count++
+                    count++
                 })
             }
         });
@@ -211,11 +132,11 @@ count++
                 table.html('');
 
                 $.each(r.teams, function (key, val) {
-                   
+
                     table.append('<div nowrap style="border: 5px solid lightgray" class=col-2 id="teamsbox"><span style=border-bottom:solid 1px  black>' + val.Team_Country + '<img style="width:48px;height:24px"src="' + val.Team_Flag + '"/></span><div class="player col-12" style=background-color:white;color:black;width:auto%><p style=font-size:20px>' + val.Team_Member_01 + '</p><p style=font-size:20px>' + val.Team_Member_02 + '</p><p style=font-size:20px>' + val.Team_Member_03 + '</p><p style=font-size:20px>' + val.Team_Member_04 + '</p><p style=font-size:20px>' + val.Team_Member_05 + '</p></div></div>')
                     /*table.append('<tr class=draftrow style=font-size:12px id=' + val.Player_ID + '><td>' + val.Player_Name + '</td>/<tr>')*/
                     $("p:contains('null')").hide();
-                    
+
                 })
             }
         });
@@ -229,11 +150,11 @@ count++
         Countries();
         Players();
 
-     
+
     });
 
 
-   
+
     function Countries() {
 
         $.ajax({
@@ -468,7 +389,7 @@ count++
 
 
     $('#CreatePlayer').on('keyup', function () {
-    
+
         if ($(this).val().length > 2) {
 
             $('#CreatePlayerButton').prop('disabled', false);
@@ -488,7 +409,7 @@ count++
 
 
         player.Player_Name = $('#CreatePlayer').val(),
-         
+
             player.Olympics_Date = "07/23/2022"
         players.push(player);
 
@@ -500,12 +421,12 @@ count++
             dataType: "json",
             contentType: 'application/json; charset=utf-8',
             success: function (r) {
-                alertify.success($('#CreatePlayer').val()+' Created')
+                alertify.success($('#CreatePlayer').val() + ' Created')
                 Draftboard();
                 $('#CreatePlayerButton').prop('disabled', true);
-                }
-        
-            
+            }
+
+
 
         });
     })

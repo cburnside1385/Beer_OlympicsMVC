@@ -14,7 +14,6 @@ namespace Beer_Olympics
     
     public partial class Player
     {
-        public System.Guid ID { get; set; }
         public int Player_ID { get; set; }
         public string Player_Name { get; set; }
         public Nullable<System.DateTime> Olympics_Date { get; set; }

@@ -70,6 +70,28 @@ namespace Beer_Olympics.Controllers
             return View(db.Teams.ToList());
         }
 
+        public ActionResult Schedule()
+        {
+            return View();
+        }
+        public ActionResult Rules()
+        {
+            IEnumerable<SelectListItem> games = db.Games
+             
+              .OrderBy(c => c.Game_Name)
+              .Select(c => new SelectListItem
+              {
+
+                  Value = c.Game_ID.ToString(),
+                  Text = c.Game_Name
+
+
+              }).Distinct();
+            ViewBag.GamesList = games;
+
+            return View();
+        }
+
         public JsonResult Boat_Time()
 
         {
@@ -358,35 +380,36 @@ namespace Beer_Olympics.Controllers
         // POST: Games/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Game_ID,Game_Name,Game_Type,Game_Rule_01,Game_Rule_02,Game_Rule_03,Game_Rule_04,Game_Rule_05,Game_Rule_06,Game_Rule_07,Game_Rule_08,Game_Rule_09,Game_Rule_10,Game_Rule_11,Game_Rule_12,Game_Rule_13,Game_Rule_14,Game_Rule_15")] Game game)
-        {
-            if (ModelState.IsValid)
-            {
-                game.ID = Guid.NewGuid();
-                db.Games.Add(game);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "ID,Game_ID,Game_Name,Game_Type,Game_Rule_01,Game_Rule_02,Game_Rule_03,Game_Rule_04,Game_Rule_05,Game_Rule_06,Game_Rule_07,Game_Rule_08,Game_Rule_09,Game_Rule_10,Game_Rule_11,Game_Rule_12,Game_Rule_13,Game_Rule_14,Game_Rule_15")] Game game)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        game.ID = Guid.NewGuid();
+        //        db.Games.Add(game);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(game);
-        }
+        //    return View(game);
+        //}
 
         // GET: Games/Edit/5
-        public ActionResult Edit(Guid? id)
+        public ActionResult GetRules(int id)
         {
-            if (id == null)
+            var rules = (from c in db.Games
+                         where c.Game_ID == id
+                         orderby c.Game_Name
+                         select c.Game_Rules).FirstOrDefault();
+            return Json(new
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Game game = db.Games.Find(id);
-            if (game == null)
-            {
-                return HttpNotFound();
-            }
-            return View(game);
+                rules
+
+
+            });
         }
+
 
         // POST: Games/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 

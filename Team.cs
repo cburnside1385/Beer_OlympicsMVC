@@ -50,5 +50,6 @@ namespace Beer_Olympics
         public Nullable<int> Pool_Pig_place { get; set; }
         public Nullable<int> Speed_Ball { get; set; }
         public Nullable<int> Speed_Ball_Place { get; set; }
+        public string Team_Flag { get; set; }
     }
 }

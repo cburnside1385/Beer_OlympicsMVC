@@ -1,8 +1,5 @@
 ﻿@model IEnumerable<Beer_Olympics.Team>
-<head>
 
-    <script src="~/Scripts/CustomScripts/SscoreBoard.js"></script>
-</head>
 <style>
 /*    th.rotate {
         transform: rotate(-45deg);
@@ -17,7 +14,7 @@
 <table style="width:100%" class="table" id="ScoreBoard">
     <thead>
         <tr>
-
+            <th class=rotate></th>
             <th class=rotate>Country</th>
             <th class=rotate>Beer Pong</th>
             <th class=rotate>Baseball</th>
@@ -34,7 +31,7 @@
             <th class=rotate>Quarters</th>
             <th class=rotate>Pool Pig</th>
             <th class=rotate>Total Score</th>
-
+            <th class=rotate>Place</th>
 
             <th hidden>Country</th>
             <th hidden>Beer Pong</th>

@@ -14,24 +14,9 @@ namespace Beer_Olympics
     
     public partial class Game
     {
-        public System.Guid ID { get; set; }
         public int Game_ID { get; set; }
         public string Game_Name { get; set; }
         public string Game_Type { get; set; }
-        public string Game_Rule_01 { get; set; }
-        public string Game_Rule_02 { get; set; }
-        public string Game_Rule_03 { get; set; }
-        public string Game_Rule_04 { get; set; }
-        public string Game_Rule_05 { get; set; }
-        public string Game_Rule_06 { get; set; }
-        public string Game_Rule_07 { get; set; }
-        public string Game_Rule_08 { get; set; }
-        public string Game_Rule_09 { get; set; }
-        public string Game_Rule_10 { get; set; }
-        public string Game_Rule_11 { get; set; }
-        public string Game_Rule_12 { get; set; }
-        public string Game_Rule_13 { get; set; }
-        public string Game_Rule_14 { get; set; }
-        public string Game_Rule_15 { get; set; }
+        public string Game_Rules { get; set; }
     }
 }
