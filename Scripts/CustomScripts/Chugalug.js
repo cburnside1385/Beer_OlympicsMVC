@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         ajax: {
 
-            url: 'Games/ChugTime',
+            url: '/Games/ChugTime',
             type: 'GET',
             dataSrc: '',
 

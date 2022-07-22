@@ -6,7 +6,7 @@ $(document).ready(function () {
 
         ajax: {
 
-            url: 'Games/Boat_Time',
+            url: '/Games/Boat_Time',
             type: 'GET',
             dataSrc: '',
 
@@ -208,7 +208,7 @@ $(document).ready(function () {
                             $.ajax({
                                 type: "Post",
 
-                                url: "Teams/ScoreboardBoat",
+                                url: "/Teams/ScoreboardBoat",
                                 data: JSON.stringify(games),
                                 dataType: "json",
                                 contentType: 'application/json; charset=utf-8',

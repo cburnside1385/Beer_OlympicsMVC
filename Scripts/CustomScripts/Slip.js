@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         ajax: {
 
-            url: 'Games/Slip_Time',
+            url: '/Games/Slip_Time',
             type: 'GET',
             dataSrc: '',
 
@@ -214,7 +214,7 @@ $(document).ready(function () {
                             $.ajax({
                                 type: "Post",
 
-                                url: "Teams/ScoreboardSlip",
+                                url: "/Teams/ScoreboardSlip",
                                 data: JSON.stringify(games),
                                 dataType: "json",
                                 contentType: 'application/json; charset=utf-8',

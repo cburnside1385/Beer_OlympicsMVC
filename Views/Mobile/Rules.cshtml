@@ -1,0 +1,126 @@
+﻿@model Beer_Olympics.Game
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <style>
+        #draftboard {
+            z-index: 9;
+            background-color: white;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        #draftboardheader {
+            padding: 10px;
+            z-index: 10;
+            text-align: center;
+            color: Black;
+            font-weight: bolder;
+            font-size: 32px;
+        }
+
+        #playersbox {
+            padding: 15px;
+            z-index: 10;
+            border: 1px solid black;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 35px;
+        }
+
+        #teamsbox {
+            padding: 15px;
+            z-index: 10;
+            border: 1px solid black;
+            text-align: center;
+            color: black;
+            font-weight: bolder;
+            font-size: 35px;
+        }
+    </style>
+    <h2>
+        Rules
+    </h2>
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div style="border:solid 2px black">
+
+            <br />
+            <div style="padding-top:10px" class="col">
+
+
+                @Html.DropDownList("games", (IEnumerable<SelectListItem>)ViewBag.GamesList, "Please Select an Option", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "gamename" })
+
+
+
+            </div>
+
+            <br />
+            <div class="container-fluid" style="border: 1px solid black;">
+                <div id="draftboardheader">Rules</div>
+                <div style="" class="rules row">
+
+                </div>
+            </div>
+
+        </div>
+
+        <br />
+        <br />
+
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script>
+
+
+    $('#gamename').on('change', function () {
+        var gamelistrules = {
+            ID: $('#gamename option:selected').val()
+        };
+        $.ajax({
+            type: "Post",
+
+            url: "/Games/GetRules",
+            data: JSON.stringify(gamelistrules),
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                var count = 1
+                const table = $('.rules')
+                table.html('');
+                console.log()
+
+                table.append('<div nowrap style="border: 5px solid lightgray" class=col-12 id="playersbox"><div class="player col-12" style=background-color:white;color:black;width:auto%><ul><li>' + data.rules[0].Game_Rules + '</li><li>' + data.rules[0].Game_Rules_2 + '</li><li>' + data.rules[0].Game_Rules_3 + '</li><li>' + data.rules[0].Game_Rules_4 + '</li><li>' + data.rules[0].Game_Rules_5 + '</li><li>' + data.rules[0].Game_Rules_6 + '</li><li>' + data.rules[0].Game_Rules_7 + '</li><li>' + data.rules[0].Game_Rules_8 + '</li><li>' + data.rules[0].Game_Rules_9 + '</li><li>' + data.rules[0].Game_Rules_10 + '</li></ul></p></div></div>')
+                /*table.append('<tr class=draftrow style=font-size:12px id=' + val.Player_ID + '><td>' + val.Player_Name + '</td>/<tr>')*/
+                $("li:contains('null')").hide();
+
+
+            }
+        });
+    });
+
+
+
+
+
+
+
+
+
+</script>

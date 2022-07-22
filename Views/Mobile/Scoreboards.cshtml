@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Beer_Olympics.Team>
+<head>
+
+    @*<script src="~/Scripts/CustomScripts/Chugalug.js"></script>*@
+</head>
+<style>
+    /*    th.rotate {
+            transform: rotate(-45deg);
+            transform-origin: top left;
+            font-size: 12px;
+        }
+    */
+    .hide {
+        display: none
+    }
+</style>
+
+
+<div></div>
+<select id="selections"><option value="">Select an Option</option><option value="Score">Score Board</option><option value="Boat">Boat Race</option><option value="Chug">Chugalug</option><option value="Slip">Slip N' Flip</option><option value="Swim">Swim N' Shoot</option><option value="Dizzy">Dizzy</option><option value="Rules">Rules</option></select>
+
+<div id="Loader">
+
+   
+
+</div>
+
+
+<script>
+
+
+      const rootUrl = '@Url.Content("~/")'
+
+
+    $("#selections").on("change", function () {
+        if ($("#selections").val() == "Boat") {
+            var url = rootUrl + "Mobile/Boat"
+            $('#Loader').load(url);
+            var scripturl = rootUrl + "Scripts/CustomScripts/Boat.js"
+            setTimeout(function () {
+                $.getScript(scripturl, function () {
+
+
+                });
+            }, 2000)
+        }
+        if ($("#selections").val() == "Chug") {
+            var url = rootUrl + "Mobile/Chug"
+            $('#Loader').load(url);
+            var scripturl = rootUrl + "Scripts/CustomScripts/Chugalug.js"
+            setTimeout(function () {
+                $.getScript(scripturl, function () {
+
+
+                });
+            }, 2000)
+        }
+
+        if ($("#selections").val() == "Score") {
+            var url = rootUrl + "Mobile/ScoreBoard"
+            $('#Loader').load(url);
+            var scripturl = rootUrl + "Scripts/CustomScripts/SscoreBoard.js"
+            setTimeout(function () {
+                $.getScript(scripturl, function () {
+
+
+                });
+            }, 2000)
+        }
+
+        if ($("#selections").val() == "Slip") {
+            var url = rootUrl + "Mobile/Slip"
+            $('#Loader').load(url);
+            var scripturl = rootUrl + "Scripts/CustomScripts/Slip.js"
+            setTimeout(function () {
+                $.getScript(scripturl, function () {
+
+
+                });
+            }, 2000)
+        }
+
+        if ($("#selections").val() == "Swim") {
+            var url = rootUrl + "Mobile/Swim"
+            $('#Loader').load(url);
+            var scripturl = rootUrl + "Scripts/CustomScripts/Swim.js"
+            setTimeout(function () {
+                $.getScript(scripturl, function () {
+
+
+                });
+            }, 2000)
+
+        }
+        if ($("#selections").val() == "Dizzy") {
+            var url = rootUrl + "Mobile/Dizzy"
+            $('#Loader').load(url);
+            var scripturl = rootUrl + "Scripts/CustomScripts/Dizzy.js"
+            setTimeout(function () {
+                $.getScript(scripturl, function () {
+
+
+                });
+            }, 2000)
+        }
+
+        if ($("#selections").val() == "Rules") {
+            var url = rootUrl + "Mobile/Rules"
+            $('#Loader').load(url);
+
+        }
+    });
+    
+</script>

@@ -10,12 +10,173 @@ using Beer_Olympics;
 
 namespace Beer_Olympics.Controllers
 {
-    public class TeamsController : Controller
+    public class MobileController : Controller
     {
         private DrinkingEntities db = new DrinkingEntities();
 
         // GET: Teams
+        public ActionResult Scoreboards()
+        {
+            return View();
+        }
+        public JsonResult ChugTime()
 
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Chugalug,
+                              c.Chugalug_Time,
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Chug()
+        {
+            return View(db.Teams.ToList());
+        }
+
+        public ActionResult Schedule()
+        {
+            return View();
+        }
+        public ActionResult Rules()
+        {
+            IEnumerable<SelectListItem> games = db.Games
+
+              .OrderBy(c => c.Game_Name)
+              .Select(c => new SelectListItem
+              {
+
+                  Value = c.Game_ID.ToString(),
+                  Text = c.Game_Name
+
+
+              }).Distinct();
+            ViewBag.GamesList = games;
+
+            return View();
+        }
+
+        public JsonResult Boat_Time()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Boat_Race,
+                              c.Boat_Race_Time
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Boat()
+        {
+            IEnumerable<SelectListItem> players = db.Teams
+         .Where(c => c.Team_Country != null)
+         .OrderBy(c => c.Team_Country)
+         .Select(c => new SelectListItem
+         {
+
+             Value = c.Team_Country,
+             Text = c.Team_Country
+
+
+         }).Distinct();
+            var playas = players.OrderBy(a => Guid.NewGuid()).ToList();
+            ViewBag.PlayerList = playas;
+            return View(db.Teams.ToList());
+        }
+
+
+        public JsonResult Dizzy_Time()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Dizzy_Bat,
+                              c.Dizzy_Bat_Time,
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Dizzy()
+        {
+            return View(db.Teams.ToList());
+        }
+        public JsonResult Slip_Time()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Slip_Flip,
+                              c.Slip_Flip_Time,
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Slip()
+        {
+            return View(db.Teams.ToList());
+        }
+        public JsonResult SwimTime()
+
+        {
+            var scores = (from c in db.Teams
+                          orderby c.Team_Country
+                          select new
+                          {
+                              c.ID,
+                              c.Team_Country,
+                              c.Swim_n_Shoot,
+                              c.Swim_n_Shoot_Time,
+
+
+
+                          });
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public ActionResult Swim()
+        {
+            return View(db.Teams.ToList());
+        }
 
 
         public JsonResult ScoreboardResults()
@@ -65,17 +226,17 @@ namespace Beer_Olympics.Controllers
 
 
                           });
-                          var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(scores, JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
-                return jsonResult;
+            return jsonResult;
 
-                         }
+        }
         public ActionResult ScoreBoard()
         {
             return View(db.Teams.ToList());
         }
 
-      
+
 
         // GET: Teams/Create
         public ActionResult Create()
@@ -117,8 +278,8 @@ namespace Beer_Olympics.Controllers
 
               }).Distinct();
             ViewBag.PlayerList = players;
-          
-          
+
+
 
             return View();
         }
@@ -181,7 +342,7 @@ namespace Beer_Olympics.Controllers
         }
         public ActionResult PlayersList(string date)
 
-    {
+        {
             var players = (from c in db.Players
                            where (c.Olympics_Date.ToString().Substring(0, 4) == date) && (c.Team_Country_ID == null)
                            orderby c.Player_Name
@@ -189,7 +350,7 @@ namespace Beer_Olympics.Controllers
                            {
                                c.Player_Name,
                                c.Player_ID,
-                               
+
 
 
                            });
@@ -202,7 +363,7 @@ namespace Beer_Olympics.Controllers
             }, JsonRequestBehavior.AllowGet);
 
 
-    }
+        }
 
 
 
@@ -210,18 +371,18 @@ namespace Beer_Olympics.Controllers
 
         {
             var teams = (from c in db.Teams
-                           where (c.Olympics_Date.ToString().Substring(0, 4) == date) && (c.Team_Member_01 != null)
-                           orderby c.Team_Country
-                           select new
-                           {
-                               c.Team_Country,
-                               c.Team_Member_01,
-                               c.Team_Member_02,
-                               c.Team_Member_03,
-                               c.Team_Member_04,
-                               c.Team_Member_05,
-                               c.Team_Flag,
-                           }) ;
+                         where (c.Olympics_Date.ToString().Substring(0, 4) == date) && (c.Team_Member_01 != null)
+                         orderby c.Team_Country
+                         select new
+                         {
+                             c.Team_Country,
+                             c.Team_Member_01,
+                             c.Team_Member_02,
+                             c.Team_Member_03,
+                             c.Team_Member_04,
+                             c.Team_Member_05,
+                             c.Team_Flag,
+                         });
 
 
             return base.Json(new
@@ -239,26 +400,26 @@ namespace Beer_Olympics.Controllers
 
         {
             var teams = (from c in db.Players
-                           where (c.Olympics_Date.ToString().Substring(0, 4) == date)
-                           orderby c.Player_Name
-                           select new
-                           {
-                               name = c.Player_Name,
-                             
-
-
-                           });
-
-            var results = (from c in db.Players
-                         where (c.Olympics_Date.ToString().Substring(0, 4) == "Nothing")
+                         where (c.Olympics_Date.ToString().Substring(0, 4) == date)
                          orderby c.Player_Name
                          select new
                          {
-                            
+                             name = c.Player_Name,
 
 
 
                          });
+
+            var results = (from c in db.Players
+                           where (c.Olympics_Date.ToString().Substring(0, 4) == "Nothing")
+                           orderby c.Player_Name
+                           select new
+                           {
+
+
+
+
+                           });
 
 
             return base.Json(new
@@ -309,15 +470,15 @@ namespace Beer_Olympics.Controllers
 
 
         [HttpPost]
-        public JsonResult SaveTeam(List<Team>team)
+        public JsonResult SaveTeam(List<Team> team)
 
         {
-          using (DrinkingEntities entities = new DrinkingEntities())
+            using (DrinkingEntities entities = new DrinkingEntities())
             {
 
 
 
-                if(team == null)
+                if (team == null)
                 {
 
                     team = new List<Team>();
@@ -325,7 +486,7 @@ namespace Beer_Olympics.Controllers
                 }
 
 
-                foreach(Team teams in team)
+                foreach (Team teams in team)
                 {
 
 
@@ -336,10 +497,10 @@ namespace Beer_Olympics.Controllers
                 int insertedRecords = entities.SaveChanges();
                 return Json(insertedRecords);
             }
-                    
-                    
-                    
-         }
+
+
+
+        }
 
         [HttpPost]
         public JsonResult CreatePlayer(List<Player> player)
@@ -378,13 +539,13 @@ namespace Beer_Olympics.Controllers
 
         {
 
-            
+
             if (ModelState.IsValid)
             {
                 bool result = true;
                 db.Entry(model).State = EntityState.Modified;
 
-                //db.Entry(model).Property(x => x.Player_ID).IsModified = false;
+                db.Entry(model).Property(x => x.Player_ID).IsModified = false;
                 db.Entry(model).Property(x => x.Player_Name).IsModified = false;
                 db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
                 db.SaveChanges();
@@ -421,7 +582,7 @@ namespace Beer_Olympics.Controllers
                 db.Entry(model).Property(x => x.Swim_n_Shoot).IsModified = false;
                 db.Entry(model).Property(x => x.Swim_n_Shoot_Time).IsModified = false;
                 db.Entry(model).Property(x => x.Boat_Race).IsModified = false;
-                db.Entry(model).Property(x => x.Boat_Race_Time).IsModified = false;        
+                db.Entry(model).Property(x => x.Boat_Race_Time).IsModified = false;
                 db.Entry(model).Property(x => x.Chugalug).IsModified = false;
                 db.Entry(model).Property(x => x.Chugalug_Time).IsModified = false;
                 db.Entry(model).Property(x => x.Olympics_Date).IsModified = false;
@@ -709,7 +870,7 @@ namespace Beer_Olympics.Controllers
             return Json("Failed", JsonRequestBehavior.AllowGet);
         }
 
-        
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

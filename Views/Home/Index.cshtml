@@ -7,7 +7,7 @@
 <div id="Start">
     <img style="width:100%;height:100%"src="~/Content/Start_Screen.gif" />
 </div>
-<div style="display:none;background-color:#dee2e6;padding-top:10px;width:100%" id="tabs-Home" class="tabsHome">
+<div style="display:none;background-color:#dee2e6" id="tabs-Home" class="tabsHome">
     <div>
         <ul>
             <li class="tab  tabsHome tabsHome-Scoreboard"><a href="#tabsHomeScoreboard">Scoreboard</a></li>
@@ -28,42 +28,41 @@
     <div id="tabsHomeBrackets">
         <div class="tabsbracket">
             <ul>
-                <li class="tab tabsHome tabsHome-Scoreboard"><a href="#tabsbeerpong">Beer Pong</a></li>
-                <li class="tab tabsHome tabsHome-Brackets"><a href="#Baseball">Baseball</a></li>
-                <li class="tab tabsHome tabsHome-Brackets"><a href="#Civil">Civil War</a></li>
-                <li class="tab tabsHome tabsHome-Scoreboard"><a href="#Cornhole">Cornhole</a></li>
-                <li class="tab tabsHome tabsHome-Brackets"><a href="#Flip">Flip-Cup</a></li>
-                <li class="tab tabsHome tabsHome-Brackets"><a href="#High">High-Noon</a></li>
-                <li class="tab tabsHome tabsHome-Brackets"><a href="#SpeedBall">SpeedBall</a></li>
+                <li class="tab tabsHome Beer"><a href="#tabsbeerpong">Beer Pong</a></li>
+                <li class="tab tabsHome Baseball"><a href="#Baseball">Baseball</a></li>
+                <li class="tab tabsHome Civil"><a href="#Civil">Civil War</a></li>
+                <li class="tab tabsHome Corn"><a href="#Cornhole">Cornhole</a></li>
+                <li class="tab tabsHome Flip"><a href="#Flip">Flip-Cup</a></li>
+                <li class="tab tabsHome High"><a href="#High">High-Noon</a></li>
+                <li class="tab tabsHome Speed"><a href="#SpeedBall">SpeedBall</a></li>
 
 
             </ul>
             <div id="tabsbeerpong">
-                @Html.Action("BeerpongBracket", "Games")
+               
 
             </div>
             <div id="Baseball">
-                @Html.Action("BaseballBracket", "Games")
-
+            
             </div>
             <div id="Civil">
-                @Html.Action("CivilWarBracket", "Games")
+               
 
             </div>
             <div id="Cornhole">
-                @Html.Action("CornholeBracket", "Games")
+                
 
             </div>
             <div id="Flip">
-                @Html.Action("FlipcupBracket", "Games")
+                
 
             </div>
             <div id="High">
-                @Html.Action("HighnoonBracket", "Games")
+                
 
             </div>
             <div id="SpeedBall">
-                @Html.Action("SpeedballBracket", "Games")
+              
 
             </div>
 
@@ -128,9 +127,49 @@
     })
     window.onbeforeunload = function () { return false; }
 
+    $(".tabsHome-Brackets").one("click", function () {
+        var url = rootUrl + "Games/BeerPongBracket"
+        $('#tabsbeerpong').load(url);
+
+    });
+
+    $(".Baseball").one("click", function () {
+        var url = rootUrl + "Games/BaseballBracket"
+        $('#Baseball').load(url);
+
+    });
 
 
- 
+    $(".Civil").one("click", function () {
+        var url = rootUrl + "Games/CivilWarBracket"
+        $('#Civil').load(url);
+
+    });
+    
+      
+          
+    $(".Corn").one("click", function () {
+        var url = rootUrl + "Games/CornholeBracket"
+        $('#Cornhole').load(url);
+
+    });
+
+    $(".Flip").one("click", function () {
+        var url = rootUrl + "Games/FlipcupBracket"
+        $('#Flip').load(url);
+
+    });
+
+    $(".High").one("click", function () {
+        var url = rootUrl + "Games/HighnoonBracket"
+        $('#High').load(url);
+
+    });
+    $(".Speed").one("click", function () {
+        var url = rootUrl + "Games/SpeedballBracket"
+        $('#SpeedBall').load(url);
+
+    });
     $(".Times").one("click", function () {
 
         var scripturl = rootUrl + "Scripts/CustomScripts/Boat.js"
@@ -171,6 +210,9 @@
 
         });
     });
+
+
+   
     setTimeout(function ()
     {
 

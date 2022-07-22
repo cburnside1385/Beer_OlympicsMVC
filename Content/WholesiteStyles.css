@@ -21,7 +21,7 @@ html, body {
 
 
 
-.weekdayTitle {
+/*.weekdayTitle {
     background-color: #f1ae1a;
     color: #0a3562;
     font-weight: bolder;
@@ -30,69 +30,38 @@ html, body {
     border-bottom: 5px solid lightgray;
 }
 
-.weekday {
-    background-color: #577397;
-    border: 5px solid lightgray;
-    text-align: center;
-    height: fit-content;
-}
-
-
-.highTemp {
-    color: #0a3562;
-    font-size: 24px;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.lowTemp {
-    color: #577397;
-    font-size: 12px;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.temps {
-    background-color: white;
-    height: 60px;
-}
-
-.temps2 {
-    background-color: white;
-    height: 60px;
-    margin: 0px 0px 0px 0px;
-}
-
-.rainChance {
-    height: auto;
-    background-color: #0a3562;
-    color: white;
-    font-weight: bolder;
-}
-
-.white {
-    color: white;
-}
 
 
 
-
+div.container{
+    width:100%
+}*/
 
 
 
 /* Media Queries  */
 
 
-@media screen and (max-width: 840px) {
+/*@media screen and (max-width: 840px) {
 
 
-
-    #current-weather-container {
+    #tabsHomeScoreboard {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: vw100;
+        width: 100vw;
         padding: 20px 0;
+         overflow-x: auto;
+    }
+
+
+    #tabsHome {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        padding: 20px 0;
+        overflow-x: auto;
     }
 
 
@@ -115,15 +84,39 @@ html, body {
         width: vw100;
     }
 
-    #nav-container {
-        float: none !important;
-    }
 }
 
-@media screen and (max-width: 441px) {
-    .tabs li {
+@media screen and (max-width: 441px) {*/
+    /*.ui-tabs .ui-tabs-nav li {
+        display: flex;*/ /*To overwrite jquery-ui.css*/
+       
+        /*border: none;
+        margin: 0 0 -5px 0;
+        background: none;
+    }*/
+    /*#tabsHomeScoreboard {
+        display: flex;
         justify-content: center;
-        padding-top: 10px;
+        align-items: center;
+        width: 100vw;
+        padding: 20px 0;
+        overflow-x: auto;
+    }*/
+
+  /*  #ScoreBoard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        padding: 20px 0;
+        overflow-x: auto;
+    }*/
+    /*#tabsHome {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        padding: 20px 0;
+    
     }
-   
-}
+}*/

@@ -118,7 +118,7 @@
                         </td>
 
                         <td style="width:15%;">
-                            @Html.DropDownListFor(model => model.Team_Member_01, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername" })
+                            @Html.DropDownListFor(model => model.Team_Member_01, (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername_" })
                         </td>
 
                         <td style="width:15%;">
@@ -278,16 +278,32 @@ count++
 
                 arr = [];
                 arr2 = [];
+                $('#playername_').html('').prepend("<option value='' selected='selected'></option>");
+                $('#playername__').html('').prepend("<option value='' selected='selected'></option>");
+                $('#playername___').html('').prepend("<option value='' selected='selected'></option>");
+                $('#playername____').html('').prepend("<option value='' selected='selected'><o/ption>");
+                $('#playername_____').html('').prepend("<option value='' selected='selected'></option>");
                 $.each(data.players, function (key, value) {
 
                     if (value != null && value != "") {
-                        arr.push(value.ID)
+                        arr.push(value.Player_ID)
+                  
+                        $('#playername_').append($('<option></option>').val(value.Player_ID).html(value.Player_Name))
 
+                        $('#playername__').append($('<option></option>').val(value.Player_ID).html(value.Player_Name))
 
+                        $('#playername___').append($('<option></option>').val(value.Player_ID).html(value.Player_Name))
+
+                        $('#playername____').append($('<option></option>').val(value.Player_ID).html(value.Player_Name))
+
+                        $('#playername_____').append($('<option></option>').val(value.Player_ID).html(value.Player_Name))
                     }
-
+                   
+                    
+                    
 
                 });
+            
                 const generateRandomBetween = (exclude, exclude2, exclude3, exclude4) => {
                     let ranNum = arr[Math.floor(Math.random() * arr.length)];;
 
@@ -304,13 +320,14 @@ count++
                 var randomPlayer3 = generateRandomBetween(randomPlayer, randomPlayer2, randomPlayer3, randomPlayer4);
                 var randomPlayer4 = generateRandomBetween(randomPlayer, randomPlayer2, randomPlayer3, randomPlayer4);
                 var randomPlayer5 = generateRandomBetween(randomPlayer, randomPlayer2, randomPlayer3, randomPlayer4);
-
-                $('#playername:visible').val(randomPlayer)
+                
+                $('#playername_:visible').val(randomPlayer)
                 $('#playername__:visible').val(randomPlayer2)
                 $('#playername___:visible').val(randomPlayer3)
                 $('#playername____:visible').val(randomPlayer4)
                 $('#playername_____:visible').val(randomPlayer5)
-                if ($('#playername').val() == null || $('#playername').val() == "") {
+       
+                if ($('#playername_').val() == null || $('#playername_').val() == "") {
                     $('.save').prop('disabled', true);
                 }
                 else {
@@ -410,7 +427,7 @@ count++
 
         team.Team_Flag = $('#countryflag').val(),
             team.Team_Country = $('#playerTeam').val(),
-            team.Team_Member_01 = $('#playername option:selected').text(),
+            team.Team_Member_01 = $('#playername_ option:selected').text(),
             team.Team_Member_02 = $('#playername__ option:selected').text(),
             team.Team_Member_03 = $('#playername___ option:selected').text(),
             team.Team_Member_04 = $('#playername____ option:selected').text(),
@@ -429,7 +446,7 @@ count++
                 $(".players").each(function (i, obj) {
                     var players = {
                         Team_Country_ID: $('#playerTeam').val(),
-                        ID: $(this).val(),
+                        Player_ID: $(this).val(),
 
                     }
 
@@ -502,6 +519,7 @@ count++
             success: function (r) {
                 alertify.success($('#CreatePlayer').val()+' Created')
                 Draftboard();
+                Players();
                 $('#CreatePlayerButton').prop('disabled', true);
                 }
         

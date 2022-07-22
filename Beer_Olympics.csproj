@@ -119,6 +119,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\MobileController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
@@ -914,6 +915,14 @@
     <Content Include="Views\Games\Slip.cshtml" />
     <Content Include="Views\Games\Swim.cshtml" />
     <Content Include="Views\Games\Dizzy.cshtml" />
+    <Content Include="Views\Mobile\Boat.cshtml" />
+    <Content Include="Views\Mobile\Chug.cshtml" />
+    <Content Include="Views\Mobile\Dizzy.cshtml" />
+    <Content Include="Views\Mobile\Slip.cshtml" />
+    <Content Include="Views\Mobile\Rules.cshtml" />
+    <Content Include="Views\Mobile\Swim.cshtml" />
+    <Content Include="Views\Mobile\ScoreBoard.cshtml" />
+    <Content Include="Views\Mobile\Scoreboards.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
