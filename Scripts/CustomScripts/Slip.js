@@ -20,7 +20,7 @@ $(document).ready(function () {
             { data: 'Team_Country', autowidth: "150px", className: 'country', },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:100px" placeholder ="Seconds"  class="SlipRound1 SlipSumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*" style="width:100px" placeholder ="Seconds"  class="SlipRound1 SlipSumit">', searchable: false
 
             },
 

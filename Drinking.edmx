@@ -21,6 +21,15 @@
           <Property Name="Game_Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Game_Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Game_Rules" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_2" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_3" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_4" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_5" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_6" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_7" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_8" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_9" Type="nvarchar(max)" />
+          <Property Name="Game_Rules_10" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Players">
           <Key>
@@ -156,6 +165,15 @@
           <Property Name="Game_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Game_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Game_Rules" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Rules_10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -228,6 +246,15 @@
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="DrinkingModel.Game">
               <MappingFragment StoreEntitySet="Games">
+                <ScalarProperty Name="Game_Rules_10" ColumnName="Game_Rules_10" />
+                <ScalarProperty Name="Game_Rules_9" ColumnName="Game_Rules_9" />
+                <ScalarProperty Name="Game_Rules_8" ColumnName="Game_Rules_8" />
+                <ScalarProperty Name="Game_Rules_7" ColumnName="Game_Rules_7" />
+                <ScalarProperty Name="Game_Rules_6" ColumnName="Game_Rules_6" />
+                <ScalarProperty Name="Game_Rules_5" ColumnName="Game_Rules_5" />
+                <ScalarProperty Name="Game_Rules_4" ColumnName="Game_Rules_4" />
+                <ScalarProperty Name="Game_Rules_3" ColumnName="Game_Rules_3" />
+                <ScalarProperty Name="Game_Rules_2" ColumnName="Game_Rules_2" />
                 <ScalarProperty Name="Game_Rules" ColumnName="Game_Rules" />
                 <ScalarProperty Name="Game_Type" ColumnName="Game_Type" />
                 <ScalarProperty Name="Game_Name" ColumnName="Game_Name" />

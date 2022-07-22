@@ -401,7 +401,7 @@ namespace Beer_Olympics.Controllers
             var rules = (from c in db.Games
                          where c.Game_ID == id
                          orderby c.Game_Name
-                         select c.Game_Rules).FirstOrDefault();
+                         select c);
             return Json(new
             {
                 rules

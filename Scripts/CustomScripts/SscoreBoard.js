@@ -31,68 +31,68 @@ $(document).ready(function () {
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Baseball Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Baseball Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Chug Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Chug Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Corn Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Corn Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Speed Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Speed Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="BoatRace Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="BoatRace Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Civil Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Civil Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Dizzy Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Dizzy Sumit">', searchable: false
 
             },
            
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Flip Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Flip Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="High Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="High Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Slip Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Slip Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Swim Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Swim Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Quarters Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*" style="width:35px" class="Quarters Sumit">', searchable: false
 
             },
             {
                 data: null, autowidth: true,
-                defaultContent: '<input style="width:35px" class="Pig Sumit">', searchable: false
+                defaultContent: '<input type=text pattern="[0-9]*"style="width:35px" class="Pig Sumit">', searchable: false
 
             },
 

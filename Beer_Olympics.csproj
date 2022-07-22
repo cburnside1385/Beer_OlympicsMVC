@@ -914,7 +914,6 @@
     <Content Include="Views\Games\Slip.cshtml" />
     <Content Include="Views\Games\Swim.cshtml" />
     <Content Include="Views\Games\Dizzy.cshtml" />
-    <Content Include="Views\Games\Schedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

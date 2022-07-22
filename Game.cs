@@ -18,5 +18,14 @@ namespace Beer_Olympics
         public string Game_Name { get; set; }
         public string Game_Type { get; set; }
         public string Game_Rules { get; set; }
+        public string Game_Rules_2 { get; set; }
+        public string Game_Rules_3 { get; set; }
+        public string Game_Rules_4 { get; set; }
+        public string Game_Rules_5 { get; set; }
+        public string Game_Rules_6 { get; set; }
+        public string Game_Rules_7 { get; set; }
+        public string Game_Rules_8 { get; set; }
+        public string Game_Rules_9 { get; set; }
+        public string Game_Rules_10 { get; set; }
     }
 }

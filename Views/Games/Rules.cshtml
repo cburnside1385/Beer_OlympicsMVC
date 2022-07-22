@@ -58,7 +58,7 @@
             <div style="padding-top:10px" class="col">
 
 
-                @Html.DropDownList("games",(IEnumerable<SelectListItem>)ViewBag.GamesList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "gamename" })
+                @Html.DropDownList("games",(IEnumerable<SelectListItem>)ViewBag.GamesList, "Please Select an Option", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "gamename" })
 
 
 
@@ -66,8 +66,8 @@
 
             <br />
             <div class="container-fluid" style="border: 1px solid black;">
-                <div id="draftboardheader">Teams</div>
-                <div style="" class="drafted row">
+                <div id="draftboardheader">Rules</div>
+                <div style="" class="rules row">
 
                 </div>
             </div>
@@ -101,13 +101,13 @@
             contentType: 'application/json; charset=utf-8',
             success: function (data) {
                 var count = 1
-                const table = $('.drafted')
+                const table = $('.rules')
                 table.html('');
-
+                console.log()
               
-                    table.append('<div nowrap style="border: 5px solid lightgray" class=col-2 id="playersbox"><div class="player col-12" style=background-color:white;color:black;width:auto%><p>'+data.rules + '</p></div></div>')
+                table.append('<div nowrap style="border: 5px solid lightgray" class=col-12 id="playersbox"><div class="player col-12" style=background-color:white;color:black;width:auto%><ul><li>' + data.rules[0].Game_Rules + '</li><li>' + data.rules[0].Game_Rules_2 + '</li><li>' + data.rules[0].Game_Rules_3 + '</li><li>' + data.rules[0].Game_Rules_4 + '</li><li>' + data.rules[0].Game_Rules_5 + '</li><li>' + data.rules[0].Game_Rules_6 + '</li><li>' + data.rules[0].Game_Rules_7 + '</li><li>' + data.rules[0].Game_Rules_8 + '</li><li>' + data.rules[0].Game_Rules_9 + '</li><li>' + data.rules[0].Game_Rules_10 + '</li></ul></p></div></div>')
                     /*table.append('<tr class=draftrow style=font-size:12px id=' + val.Player_ID + '><td>' + val.Player_Name + '</td>/<tr>')*/
-
+                $("li:contains('null')").hide();
 
                 
             }
