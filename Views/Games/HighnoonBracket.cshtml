@@ -19,7 +19,7 @@
     @*<script src="~/Scripts/Drawing-Tournament-Brackets-with-jQuery-Brackets-js/js/brackets.min.js"></script>*@
 </head>
 <body style="background-color:black">
-    
+
     <div hidden>
 
         @Html.DropDownList("PlayerList", (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "Highplayername" })
@@ -28,6 +28,11 @@
     <center>
         <div style="height: 600px; background-color:black ; background-image: url('../../content/rings.png'); background-repeat: no-repeat;" class="container High">
         </div>
+    </center>
+    <center>
+        <footer style="color:Black;font-size:36px">
+            High Noon
+        </footer>
     </center>
 </body>
 <script>
