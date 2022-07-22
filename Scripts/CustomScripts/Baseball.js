@@ -1,0 +1,805 @@
+﻿Baseball();
+
+
+function Baseball() {
+    $(".everypagefooter").hide();
+    var BasePlayer01 = $('#Baseballplayername').children('option:eq(1)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+    var BasePlayer02 = $('#Baseballplayername').children('option:eq(2)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+    var BasePlayer03 = $('#Baseballplayername').children('option:eq(3)').map(function (i, e) {
+
+        return e.innerText
+
+
+    }).get();
+    var BasePlayer04 = $('#Baseballplayername').children('option:eq(4)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer05 = $('#Baseballplayername').children('option:eq(5)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+    var BasePlayer06 = $('#Baseballplayername').children('option:eq(6)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+    var BasePlayer07 = $('#Baseballplayername').children('option:eq(7)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+    var BasePlayer08 = $('#Baseballplayername').children('option:eq(8)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+    var BasePlayer09 = $('#Baseballplayername').children('option:eq(9)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+    var BasePlayer10 = $('#Baseballplayername').children('option:eq(10)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer11 = $('#Baseballplayername').children('option:eq(11)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer12 = $('#Baseballplayername').children('option:eq(12)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer13 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer10 = $('#Baseballplayername').children('option:eq(10)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer11 = $('#Baseballplayername').children('option:eq(11)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer12 = $('#Baseballplayername').children('option:eq(12)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer13 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == " " || e == null) {
+            return "null"
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer14 = $('#Baseballplayername').children('option:eq(10)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer15 = $('#Baseballplayername').children('option:eq(11)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer16 = $('#Baseballplayername').children('option:eq(12)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer17 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer18 = $('#Baseballplayername').children('option:eq(10)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer19 = $('#Baseballplayername').children('option:eq(11)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer20 = $('#Baseballplayername').children('option:eq(12)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer21 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer22 = $('#Baseballplayername').children('option:eq(10)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer23 = $('#Baseballplayername').children('option:eq(11)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer24 = $('#Baseballplayername').children('option:eq(12)').map(function (i, e) {
+
+        return e.innerText
+
+    }).get();
+
+    var BasePlayer25 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+
+
+    var BasePlayer26 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+
+    var BasePlayer27 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer28 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer29 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer30 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer31 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer32 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer33 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer34 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer35 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer36 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer37 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer38 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer39 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer40 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer41 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer42 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer43 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer44 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer45 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer46 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer47 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer48 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer49 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+
+
+    }).get();
+
+    var BasePlayer50 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer51 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer52 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer53 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer54 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer55 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer56 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer57 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer58 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer59 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer60 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer61 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer62 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e == "" || e == null) {
+            return null
+        }
+        else { return e.innerText }
+
+    }).get();
+    var BasePlayer63 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+
+    }).get();
+    var BasePlayer64 = $('#Baseballplayername').children('option:eq(13)').map(function (i, e) {
+
+        if (e.innerText == "" || e.innerText == null) {
+            return e.innerText = null
+        }
+        else { return e.innerText }
+
+
+    }).get();
+
+    if (BasePlayer01 == "") {
+        BasePlayer01 = null
+
+    }
+    if (BasePlayer02 == "") {
+        BasePlayer02 = null
+    }
+    if (BasePlayer03 == "") {
+        BasePlayer03 = null
+    }
+    if (BasePlayer04 == "") {
+        BasePlayer04 = null
+    }
+    if (BasePlayer05 == "") {
+        BasePlayer05 = null
+    }
+    if (BasePlayer06 == "") {
+        BasePlayer06 = null
+    }
+    if (BasePlayer07 == "") {
+        BasePlayer07 = null
+    }
+    if (BasePlayer08 == "") {
+        BasePlayer08 = null
+    }
+    if (BasePlayer09 == "") {
+        BasePlayer09 = null
+    }
+    if (BasePlayer10 == "") {
+        BasePlayer10 = null
+    }
+    if (BasePlayer11 == "") {
+        BasePlayer11 = null
+    }
+    if (BasePlayer12 == "") {
+        BasePlayer12 = null
+    }
+    if (BasePlayer13 == "") {
+        BasePlayer13 = null
+    }
+    if (BasePlayer14 == "") {
+        BasePlayer14 = null
+    }
+    if (BasePlayer15 == "") {
+        BasePlayer15 = null
+    }
+    if (BasePlayer16 == "") {
+        BasePlayer16 = null
+    }
+    if (BasePlayer17 == "") {
+        BasePlayer17 = null
+    }
+    if (BasePlayer18 == "") {
+        BasePlayer18 = null
+    }
+    if (BasePlayer19 == "") {
+        BasePlayer19 = null
+    }
+    if (BasePlayer20 == "") {
+        BasePlayer20 = null
+    }
+    if (BasePlayer21 == "") {
+        BasePlayer21 = null
+    }
+    if (BasePlayer22 == "") {
+        BasePlayer22 = null
+    }
+    if (BasePlayer23 == "") {
+        BasePlayer23 = null
+    }
+    if (BasePlayer24 == "") {
+        BasePlayer24 = null
+    }
+    if (BasePlayer25 == "") {
+        BasePlayer25 = null
+    }
+    if (BasePlayer26 == "") {
+        BasePlayer26 = null
+    }
+    if (BasePlayer27 == "") {
+        BasePlayer27 = null
+    }
+    if (BasePlayer28 == "") {
+        BasePlayer28 = null
+    }
+    if (BasePlayer29 == "") {
+        BasePlayer29 = null
+    }
+    if (BasePlayer30 == "") {
+        BasePlayer30 = null
+    }
+    if (BasePlayer31 == "") {
+        BasePlayer31 = null
+    }
+    if (BasePlayer32 == "") {
+        BasePlayer32 = null
+    }
+    if (BasePlayer33 == "") {
+        BasePlayer33 = null
+    }
+    if (BasePlayer34 == "") {
+        BasePlayer34 = null
+    }
+    if (BasePlayer35 == "") {
+        BasePlayer35 = null
+    }
+    if (BasePlayer36 == "") {
+        BasePlayer36 = null
+    }
+    if (BasePlayer37 == "") {
+        BasePlayer37 = null
+    }
+    if (BasePlayer38 == "") {
+        BasePlayer38 = null
+    }
+    if (BasePlayer39 == "") {
+        BasePlayer39 = null
+    }
+    if (BasePlayer40 == "") {
+        BasePlayer40 = null
+    }
+    if (BasePlayer41 == "") {
+        BasePlayer41 = null
+    }
+    if (BasePlayer42 == "") {
+        BasePlayer42 = null
+    }
+    if (BasePlayer43 == "") {
+        BasePlayer43 = null
+    }
+    if (BasePlayer44 == "") {
+        BasePlayer44 = null
+    }
+    if (BasePlayer45 == "") {
+        BasePlayer45 = null
+    }
+    if (BasePlayer46 == "") {
+        BasePlayer46 = null
+    }
+    if (BasePlayer47 == "") {
+        BasePlayer47 = null
+    }
+    if (BasePlayer48 == "") {
+        BasePlayer48 = null
+    }
+    if (BasePlayer49 == "") {
+        BasePlayer49 = null
+    }
+    if (BasePlayer50 == "") {
+        BasePlayer50 = null
+    }
+    if (BasePlayer51 == "") {
+        BasePlayer51 = null
+    }
+    if (BasePlayer52 == "") {
+        BasePlayer52 = null
+    }
+    if (BasePlayer53 == "") {
+        BasePlayer53 = null
+    }
+    if (BasePlayer54 == "") {
+        BasePlayer54 = null
+    }
+    if (BasePlayer55 == "") {
+        BasePlayer55 = null
+    }
+    if (BasePlayer56 == "") {
+        BasePlayer56 = null
+    }
+    if (BasePlayer57 == "") {
+        BasePlayer57 = null
+    }
+    if (BasePlayer58 == "") {
+        BasePlayer58 = null
+    }
+    if (BasePlayer59 == "") {
+        BasePlayer59 = null
+    }
+    if (BasePlayer60 == "") {
+        BasePlayer60 = null
+    }
+    if (BasePlayer61 == "") {
+        BasePlayer61 = null
+    }
+    if (BasePlayer62 == "") {
+        BasePlayer62 = null
+    }
+    if (BasePlayer63 == "") {
+        BasePlayer63 = null
+
+    }
+    if (BasePlayer64 == "") {
+        BasePlayer64 = null
+
+    }
+    /* Custom data objects passed as teams */
+
+
+
+    const Baseball = {
+        teams: [
+            [BasePlayer01, BasePlayer02],
+            [BasePlayer03, BasePlayer04],
+            [BasePlayer05, BasePlayer06],
+            [BasePlayer07, BasePlayer08],
+
+
+
+
+        ],
+
+        results: [
+            [ // WINNER BRACKET = $player-count / 2 = $teams_count
+                [[], [], [], [], [], [], [], []],
+                [[], [], [], []],
+                [[], []],
+                [[], []],
+                [[], []],
+                [[]]
+            ],
+
+            [ // FINALS
+                [[], []],
+
+            ]
+        ]
+    }
+
+
+    //const customData = {
+    //    teams: [
+    //        [Player01, Player02],
+    //        [Player03, Player04],
+    //        [Player05, Player06],
+    //        [Player07, Player08],
+    //        [Player09, Player10],
+    //        [Player11, Player12],
+    //        [Player13, Player14],
+    //        [Player15, Player16],
+    //        [Player17, Player18],
+    //        [Player19, Player20],
+    //        [Player21, Player22],
+    //        [Player23, Player24],
+    //        [Player25, Player26],
+    //        [Player27, Player28],
+    //        [Player29, Player30],
+    //        [Player31, Player32],
+    //        [Player33, Player34],
+    //        [Player35, Player36],
+    //        [Player37, Player38],
+    //        [Player39, Player40],
+    //        [Player41, Player42],
+    //        [Player43, Player44],
+    //        [Player45, Player46],
+    //        [Player47, Player48],
+    //        [Player49, Player50],
+    //        [Player51, Player52],
+    //        [Player53, Player54],
+    //        [Player55, Player56],
+    //        [Player57, Player58],
+    //        [Player59, Player60],
+    //        [Player61, Player62],
+    //        [Player63, Player64]
+    //    ],
+
+    //    results: [
+    //        [ // WINNER BRACKET = $player-count / 2 = $teams_count
+    //            [[ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ]],
+    //            [[ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ]],
+    //            [[ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ]],
+    //            [[ ], [ ], [ ], [ ]],
+    //            [[ ], [ ]],
+    //            [[ ]]
+    //        ],
+
+    //        [ // FINALS
+    //            [[ ], [ ]],
+
+    //        ]
+    //    ]
+    //}fdrit
+
+
+    $('.baseball').bracket({
+        init: Baseball
+    });
+
+    $(' .baseball').bracket({
+        init: Baseball, // data to initialize
+        save: function () { }, // called whenever bracket is modified
+        userData: null, // custom user data
+        onMatchClick: null, // callback
+        onMatchHover: null, // callback
+
+
+        /* skipSecondaryFinal: true,*/
+        skipGrandFinalComeback: false,
+        skipConsolationRound: false,
+        dir: 'lr', // "rl" or  "lr",
+        disableToolbar: true,
+        disableTeamEdit: true
+        //teamWidth: '', // number
+        //scoreWidth: '', // number
+        //roundMargin: '', // number
+        //matchMargin: '', // number
+    });
+}

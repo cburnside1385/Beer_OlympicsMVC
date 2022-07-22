@@ -39,30 +39,31 @@
 
             </ul>
             <div id="tabsbeerpong">
-               
+                @Html.Action("BeerPongBracket", "Games")
 
             </div>
             <div id="Baseball">
-            
+                @Html.Action("BaseballBracket", "Games")
+
             </div>
             <div id="Civil">
-               
+                @Html.Action("CivilWarBracket", "Games")
 
             </div>
             <div id="Cornhole">
-                
+                @Html.Action("CornholeBracket", "Games")
 
             </div>
             <div id="Flip">
-                
+                @Html.Action("FlipcupBracket", "Games")
 
             </div>
             <div id="High">
-                
+                @Html.Action("HighnoonBracket", "Games")
 
             </div>
             <div id="SpeedBall">
-              
+                @Html.Action("SpeedballBracket", "Games")
 
             </div>
 
@@ -127,49 +128,68 @@
     })
     window.onbeforeunload = function () { return false; }
 
-    $(".tabsHome-Brackets").one("click", function () {
-        var url = rootUrl + "Games/BeerPongBracket"
-        $('#tabsbeerpong').load(url);
-
-    });
-
-    $(".Baseball").one("click", function () {
-        var url = rootUrl + "Games/BaseballBracket"
-        $('#Baseball').load(url);
-
-    });
+    //$(".tabsHome-Brackets").one("click", function () {
+    //    var scripturl = rootUrl + "Scripts/CustomScripts/Beer.js"
+    //    $.getScript(scripturl, function () {
 
 
-    $(".Civil").one("click", function () {
-        var url = rootUrl + "Games/CivilWarBracket"
-        $('#Civil').load(url);
+    //    });
 
-    });
-    
-      
-          
-    $(".Corn").one("click", function () {
-        var url = rootUrl + "Games/CornholeBracket"
-        $('#Cornhole').load(url);
+    //});
 
-    });
+    //$(".Baseball").one("click", function () {
+    //    var scripturl = rootUrl + "Scripts/CustomScripts/Baseball.js"
+    //    $.getScript(scripturl, function () {
 
-    $(".Flip").one("click", function () {
-        var url = rootUrl + "Games/FlipcupBracket"
-        $('#Flip').load(url);
 
-    });
+    //    });
 
-    $(".High").one("click", function () {
-        var url = rootUrl + "Games/HighnoonBracket"
-        $('#High').load(url);
+    //});
 
-    });
-    $(".Speed").one("click", function () {
-        var url = rootUrl + "Games/SpeedballBracket"
-        $('#SpeedBall').load(url);
 
-    });
+    //$(".Civil").one("click", function () {
+    //    var scripturl = rootUrl + "Scripts/CustomScripts/Civil.js"
+    //    $.getScript(scripturl, function () {
+
+
+    //    });
+
+    //});
+
+
+    //$(".Corn").one("click", function () {
+    //    var scripturl = rootUrl + "Scripts/CustomScripts/Corn.js"
+    //    $.getScript(scripturl, function () {
+
+
+    //    });
+    //});
+
+    //$(".Flip").one("click", function () {
+    //    var scripturl = rootUrl + "Scripts/CustomScripts/Flip.js"
+    //    $.getScript(scripturl, function () {
+
+
+    //    });
+
+    //});
+
+    //$(".High").one("click", function () {
+    //    var scripturl = rootUrl + "Scripts/CustomScripts/High.js"
+    //    $.getScript(scripturl, function () {
+
+
+    //    });
+
+    //});
+    //$(".Speed").one("click", function () {
+    //    var scripturl = rootUrl + "Scripts/CustomScripts/Speed.js"
+    //    $.getScript(scripturl, function () {
+
+
+    //    });
+
+    //});
     $(".Times").one("click", function () {
 
         var scripturl = rootUrl + "Scripts/CustomScripts/Boat.js"

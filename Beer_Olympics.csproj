@@ -364,8 +364,15 @@
     <Content Include="Scripts\ColReorder-1.5.6\js\colReorder.semanticui.min.js" />
     <Content Include="Scripts\ColReorder-1.5.6\js\dataTables.colReorder.js" />
     <Content Include="Scripts\ColReorder-1.5.6\js\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\CustomScripts\Baseball.js" />
     <Content Include="Scripts\CustomScripts\Boat.js" />
+    <Content Include="Scripts\CustomScripts\Beer.js" />
+    <Content Include="Scripts\CustomScripts\Civil.js" />
     <Content Include="Scripts\CustomScripts\Dizzy.js" />
+    <Content Include="Scripts\CustomScripts\Corn.js" />
+    <Content Include="Scripts\CustomScripts\Flip.js" />
+    <Content Include="Scripts\CustomScripts\High.js" />
+    <Content Include="Scripts\CustomScripts\Speed.js" />
     <Content Include="Scripts\CustomScripts\Swim.js" />
     <Content Include="Scripts\CustomScripts\Slip.js" />
     <Content Include="Scripts\CustomScripts\Chugalug.js" />
