@@ -1,6 +1,25 @@
-﻿
+﻿@{
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.13.1.min.js"></script>
+
+
+    <script src="~/Scripts/jquery-bracket/dist/jquery.bracket.min.js"></script>
+    <link href="~/Scripts/jquery-bracket/dist/jquery.bracket.min.css" rel="stylesheet" />
+    @*<script src="~/Scripts/Drawing-Tournament-Brackets-with-jQuery-Brackets-js/js/brackets.min.js"></script>*@
+</head>
 <body class="Tourneys">
-    
+
     <div hidden>
 
         @Html.DropDownList("PlayerList", (IEnumerable<SelectListItem>)ViewBag.PlayerList, "", new { @class = "form-control players selectpicker maxwidth dropdown-menu.inner", id = "playername" })
@@ -84,7 +103,7 @@
         }).get();
 
         var Player13 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -136,7 +155,7 @@
         }).get();
 
         var Player17 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -162,7 +181,7 @@
         }).get();
 
         var Player21 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -231,7 +250,7 @@
 
         }).get();
         var Player30 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -239,7 +258,7 @@
 
         }).get();
         var Player31 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -247,7 +266,7 @@
 
         }).get();
         var Player32 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -255,7 +274,7 @@
 
         }).get();
         var Player33 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -263,7 +282,7 @@
 
         }).get();
         var Player34 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -271,7 +290,7 @@
 
         }).get();
         var Player35 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -279,7 +298,7 @@
 
         }).get();
         var Player36 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -287,7 +306,7 @@
 
         }).get();
         var Player37 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -295,7 +314,7 @@
 
         }).get();
         var Player38 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -303,7 +322,7 @@
 
         }).get();
         var Player39 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -311,7 +330,7 @@
 
         }).get();
         var Player40 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -319,7 +338,7 @@
 
         }).get();
         var Player41 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -327,7 +346,7 @@
 
         }).get();
         var Player42 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -335,7 +354,7 @@
 
         }).get();
         var Player43 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -343,7 +362,7 @@
 
         }).get();
         var Player44 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -351,7 +370,7 @@
 
         }).get();
         var Player45 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -359,7 +378,7 @@
 
         }).get();
         var Player46 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -367,7 +386,7 @@
 
         }).get();
         var Player47 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -375,7 +394,7 @@
 
         }).get();
         var Player48 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -383,7 +402,7 @@
 
         }).get();
         var Player49 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -394,7 +413,7 @@
         }).get();
 
         var Player50 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -402,7 +421,7 @@
 
         }).get();
         var Player51 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -410,7 +429,7 @@
 
         }).get();
         var Player52 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -426,7 +445,7 @@
 
         }).get();
         var Player54 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -434,7 +453,7 @@
 
         }).get();
         var Player55 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -442,7 +461,7 @@
 
         }).get();
         var Player56 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -450,7 +469,7 @@
 
         }).get();
         var Player57 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -458,7 +477,7 @@
 
         }).get();
         var Player58 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -466,7 +485,7 @@
 
         }).get();
         var Player59 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -474,7 +493,7 @@
 
         }).get();
         var Player60 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -482,7 +501,7 @@
 
         }).get();
         var Player61 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -490,7 +509,7 @@
 
         }).get();
         var Player62 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
             if (e == "" || e == null) {
                 return null
             }
@@ -498,7 +517,7 @@
 
         }).get();
         var Player63 = $('#playername').children('option:eq(13)').map(function (i, e) {
-            
+
 
         }).get();
         var Player64 = $('#playername').children('option:eq(13)').map(function (i, e) {
@@ -708,7 +727,7 @@
         }
         /* Custom data objects passed as teams */
 
-      
+
 
 
         const customData = {
@@ -819,6 +838,6 @@
             //matchMargin: '', // number
         });
     }
-  
- 
+
+
 </script>

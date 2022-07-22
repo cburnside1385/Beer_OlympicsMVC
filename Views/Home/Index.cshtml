@@ -28,18 +28,18 @@
     <div id="tabsHomeBrackets">
         <div class="tabsbracket">
             <ul>
-                <li class="tab tabsHome Beer"><a href="#tabsbeerpong">Beer Pong</a></li>
-                <li class="tab tabsHome Baseball"><a href="#Baseball">Baseball</a></li>
-                <li class="tab tabsHome Civil"><a href="#Civil">Civil War</a></li>
-                <li class="tab tabsHome Corn"><a href="#Cornhole">Cornhole</a></li>
-                <li class="tab tabsHome Flip"><a href="#Flip">Flip-Cup</a></li>
-                <li class="tab tabsHome High"><a href="#High">High-Noon</a></li>
-                <li class="tab tabsHome Speed"><a href="#SpeedBall">SpeedBall</a></li>
+                <li class="tab tabsHome tabsHome-Scoreboard"><a href="#tabsbeerpong">Beer Pong</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#Baseball">Baseball</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#Civil">Civil War</a></li>
+                <li class="tab tabsHome tabsHome-Scoreboard"><a href="#Cornhole">Cornhole</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#Flip">Flip-Cup</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#High">High-Noon</a></li>
+                <li class="tab tabsHome tabsHome-Brackets"><a href="#SpeedBall">SpeedBall</a></li>
 
 
             </ul>
             <div id="tabsbeerpong">
-                @Html.Action("BeerPongBracket", "Games")
+                @Html.Action("BeerpongBracket", "Games")
 
             </div>
             <div id="Baseball">
@@ -128,68 +128,9 @@
     })
     window.onbeforeunload = function () { return false; }
 
-    //$(".tabsHome-Brackets").one("click", function () {
-    //    var scripturl = rootUrl + "Scripts/CustomScripts/Beer.js"
-    //    $.getScript(scripturl, function () {
 
 
-    //    });
-
-    //});
-
-    //$(".Baseball").one("click", function () {
-    //    var scripturl = rootUrl + "Scripts/CustomScripts/Baseball.js"
-    //    $.getScript(scripturl, function () {
-
-
-    //    });
-
-    //});
-
-
-    //$(".Civil").one("click", function () {
-    //    var scripturl = rootUrl + "Scripts/CustomScripts/Civil.js"
-    //    $.getScript(scripturl, function () {
-
-
-    //    });
-
-    //});
-
-
-    //$(".Corn").one("click", function () {
-    //    var scripturl = rootUrl + "Scripts/CustomScripts/Corn.js"
-    //    $.getScript(scripturl, function () {
-
-
-    //    });
-    //});
-
-    //$(".Flip").one("click", function () {
-    //    var scripturl = rootUrl + "Scripts/CustomScripts/Flip.js"
-    //    $.getScript(scripturl, function () {
-
-
-    //    });
-
-    //});
-
-    //$(".High").one("click", function () {
-    //    var scripturl = rootUrl + "Scripts/CustomScripts/High.js"
-    //    $.getScript(scripturl, function () {
-
-
-    //    });
-
-    //});
-    //$(".Speed").one("click", function () {
-    //    var scripturl = rootUrl + "Scripts/CustomScripts/Speed.js"
-    //    $.getScript(scripturl, function () {
-
-
-    //    });
-
-    //});
+ 
     $(".Times").one("click", function () {
 
         var scripturl = rootUrl + "Scripts/CustomScripts/Boat.js"
